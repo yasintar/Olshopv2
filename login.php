@@ -4,8 +4,7 @@
 <title>Rona Clothing</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Luxury Furnish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta name="keywords" content="Rona Clothing" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -46,20 +45,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
-				<li><a href=""> <i class="fb"> </i> </a></li>
-				<li><a href=""><i class="tw"> </i> </a></li>
-				<li><a href=""><i class="utube"> </i> </a></li>
+				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
+				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
+				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
 				<li><a href=""><i class="pin"> </i> </a></li>
-				<li><a href=""><i class="instagram"> </i> </a></li>
+				<li><a href="https://www.instagram.com/hmtc_its" target="_blank" rel="nofollow"><i class="instagram"> </i> </a></li>
 			 </ul>
-		    <div class="lang_list">
-			  <select tabindex="4" class="dropdown">
-				<option value="" class="label" value="">En</option>
-				<option value="1">English</option>
-				<option value="2">French</option>
-				<option value="3">German</option>
-			  </select>
-   			</div>
 			<div class="clearfix"></div>
           </div>
           <div class="clearfix"></div>
@@ -90,17 +81,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="menu_box">
 				   	  	<h3 class="menu_head">Menu</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="about.php">About</a></li>
-					   	  	<li><a href="about.php">Living Room</a></li>
-					   	  	<li><a href="about.php">Office Furniture</a></li>
-					   	  	<li><a href="about.php">Bean Bags</a></li>
-					   	  	<li><a href="about.php">Tables</a></li>
-					   	  	<li><a href="about.php">Sofas</a></li>
-					   	  	<li><a href="about.php">Wardrobes</a></li>
-					   	  	<li><a href="about.php">Beds</a></li>
-					   	  	<li><a href="typo.php">Typo</a></li>
-					   	  	<li><a href="about.php">Chairs</a></li>
-					   	  	<li><a href="about.php">Kids Beds</a></li>
+					   	  	<li><a href="about.php">Women</a></li>
+					   	  	<li><a href="about.php">Men</a></li>
+					   	  	<li><a href="about.php">Kids</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>
@@ -127,15 +110,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <div class="account_grid">
 			   <div class="col-md-6 login-left">
 			  	 <h3>NEW CUSTOMERS</h3>
-				 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+				 <p>By creating an account here, you will get an ID customer. You can use it to login easier, move through the checkout process faster, store multiple shipping addresses, view and track your orders.</p>
 				 <a class="acount-btn" href="register.php">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
-				<p>If you have an account with us, please log in.</p>
+				<p>If you have an account here, please log in.</p>
 				<form>
 				  <div>
-					<span>Email Address<label>*</label></span>
+					<span>ID Customer<label>*</label></span>
 					<input type="text"> 
 				  </div>
 				  <div>
@@ -167,27 +150,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    <div class="container">
 	      <div class="instagram_top">
 	      	<div class="instagram text-center">
-				<h3>Our Collections</h3>
+				<h3><a href="index.php">More Collections</a></h3>
 			</div>
 	        <ul class="instagram_grid">
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i1.jpg" class="img-responsive"alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i2.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i3.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i4.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i5.jpg" class="img-responsive" alt=""/></a></li>
-			  <li class="last_instagram"><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i6.jpg" class="img-responsive" alt=""/></a></li>
-			  <div class="clearfix"></div>
-			  <div id="small-dialog1" class="mfp-hide">
-				<div class="pop_up">
-					<h4>A Sample Photo Stream</h4>
-					<img src="images/i_zoom.jpg" class="img-responsive" alt=""/>
-				</div>
-			  </div>
+			  <li><a class="popup-with-zoom-anim" href=""><img src="images/sandal.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/tape.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/pumps.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/loaf.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/sneak.jpg" class="img-responsive" alt=""/></a></li>
+				  <li class="last_instagram"><a class="popup-with-zoom-anim" href=""><img src="images/wedges.jpg" class="img-responsive" alt=""/></a></li>
+				  <div class="clearfix"></div>
 			</ul>
 		  </div>
 	      <ul class="footer_social">			
-			<li><a href="#"><i class="tw"> </i> </a></li>
-			<li><a href="#"> <i class="fb"> </i> </a></li>
+			<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow" title="RN TW"> <i class="tw"> </i> </a></li>
+			<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow" title="RN FB"> <i class="fb"> </i> </a></li>			
 			<li><a href="#"><i class="pin"> </i> </a></li>
 			<div class="clearfix"></div>
 		   </ul>
@@ -230,13 +207,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</ul>
 			</div>
 			<div class="footer-grid">
-				<h3>Newsletter</h3>
-				<p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+				<h3>Newest Collection</h3>
+				<p class="footer_desc">I will notify you if there is something new here.</p>
 				<div class="search_footer">
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 				  <input type="submit" value="Submit">
 				</div>
-				<img src="images/payment.png" class="img-responsive" alt=""/>
+				<img src="images/pay.png" class="img-responsive" alt=""/>
 			</div>
 			 <div class="clearfix"> </div>
 		</div>
@@ -249,4 +226,4 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 </body>
-</html>		
+</html>	

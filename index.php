@@ -45,21 +45,12 @@
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
-				<li><a href=""> <i class="fb"> </i> </a></li>
-				<li><a href=""><i class="tw"> </i> </a></li>
-				<li><a href=""><i class="utube"> </i> </a></li>
+				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
+				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
+				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
 				<li><a href=""><i class="pin"> </i> </a></li>
-				<li><a href=""><i class="instagram"> </i> </a></li>
+				<li><a href="https://www.instagram.com/hmtc_its" target="_blank" rel="nofollow"><i class="instagram"> </i> </a></li>
 			 </ul>
-		    <div class="lang_list">
-			  <select tabindex="5" class="dropdown">
-				<option value="" class="label" value="">payment</option>
-				<option value="1">BRI</option>
-				<option value="2">BNI</option>
-				<option value="3">BCA</option>
-				<option value="4">Mandiri</option>
-			  </select>
-   			</div>
 			<div class="clearfix"></div>
           </div>
           <div class="clearfix"></div>
@@ -90,14 +81,14 @@
 				   <input type="submit" value="">
 	  			</div>
 	  			<div class="welcome_box">
-	  				<h3>Welcome to </br>R O N A</h3>
-	  				<p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+	  				<h3>Welcome to </br>R O N A</h3> <br>
+	  				<a href="register.php"><img src="images/register.png"></a>
 	  			</div>
    		 	</div>
    		 	<div class="banner_right">
    		 		<h1>R O N A <br>c l o t h i n g</h1>
    		 		<p>we lead the way to be fashionista!</p>
-   		 		<a href="#" class="banner_btn">Buy Now</a>
+   		 		<a href="register.php" class="banner_btn">One Step Closer</a>
    		 	</div>
    		 	<div class='clearfix'></div>
 	    </div>
@@ -144,10 +135,10 @@
 							<li>3. The item is returned unworn, unwashed and in original condition.</li>
 							<li>4. All original labels and tags are still attached to the item.</li>
 							<li>5. You provide the original RONA Clothing receipt as proof of purchase.</li>
-							<li>6. All prices are shown in Indonesian's Rupiah (Rp).</li>
+							<li>6. Reseller are welcome. Please kindly <a href="index.php">contact me</a>  to register.</li>
 							<li>7. Accessing the website means that you agree to the terms and conditions.</li>
 							<li>8. These terms and conditions apply to www.ronaclothing.co.id.</li>
-							<li>9. Our customer service will endeavor to respond to your enquiry within 24 hours.</li>
+							<li>9. I will endeavor to respond to your enquiry within 24 hours.</li>
 							<li>10.Thank you for your cooperation. Happy shopping ^^)/</li>
 							<br>
 							<li>Best Regards,</li>
@@ -345,19 +336,19 @@
 					<h3><a href="index.php">More Collections</a></h3>
 				</div>
 				<ul class="instagram_grid">
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/sandal.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/tape.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/pumps.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/loaf.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/sneak.jpg" class="img-responsive" alt=""/></a></li>
-				  <li class="last_instagram"><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/wedges.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/sandal.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/tape.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/pumps.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/loaf.jpg" class="img-responsive" alt=""/></a></li>
+				  <li><a class="popup-with-zoom-anim" href=""><img src="images/sneak.jpg" class="img-responsive" alt=""/></a></li>
+				  <li class="last_instagram"><a class="popup-with-zoom-anim" href=""><img src="images/wedges.jpg" class="img-responsive" alt=""/></a></li>
 				  <div class="clearfix"></div>
-				  <div id="small-dialog1" class="mfp-hide">
+<!--			  <div id="small-dialog1" class="mfp-hide">
 					<div class="pop_up">
 						<h4>A Sample Photo Stream</h4>
-						<img src="images/i_zoom.jpg" class="img-responsive" alt=""/>
+						<img src="images/womensandals.jpg" class="img-responsive" alt=""/>
 					</div>
-				  </div>
+				  </div> -->
 				</ul>
 			</div>
 			<ul class="footer_social">
@@ -406,13 +397,13 @@
 				</ul>
 			</div>
 			<div class="footer-grid">
-				<h3>Newsletter</h3>
-				<p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+				<h3>Newest Collection</h3>
+				<p class="footer_desc">I will notify you if there is something new here.</p>
 				<div class="search_footer">
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 				  <input type="submit" value="Subscribe">
 				</div>
-				<img src="images/payment.png" class="img-responsive" alt=""/>
+				<img src="images/pay.png" class="img-responsive" alt=""/>
 			</div>
 			 <div class="clearfix"> </div>
 		</div>

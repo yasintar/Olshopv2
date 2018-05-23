@@ -116,17 +116,17 @@
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
 				<p>If you have an account here, please log in.</p>
-				<form>
+				<form method="post" action="val_access.php">
 				  <div>
-					<span>ID Customer<label>*</label></span>
-					<input type="text"> 
+					<span>Name<label>*</label></span>
+					<input type="text" name="username"> 
 				  </div>
 				  <div>
-					<span>Password<label>*</label></span>
-					<input type="text"> 
+					<span>ID Cust<label>*</label></span>
+					<input type="text" name="idcust"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login">
+				  <input type="submit" value="Login" name="submit">
 			    </form>
 			   </div>	
 			   <div class="clearfix"> </div>

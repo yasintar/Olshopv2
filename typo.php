@@ -1,3 +1,14 @@
+<?php
+	session_start();
+
+	if(isset($_SESSION['user']) != 1){
+		echo "<script>
+			alert('you need to login first');
+			window.location.assign('index.php');
+			</script>";
+	}
+	
+?>
 <!DOCTYPE HTML>
 <html>
 <head>

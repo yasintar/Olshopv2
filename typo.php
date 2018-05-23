@@ -85,6 +85,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		    <ul class="quick_access">
 				<li class="view_cart"><a href="checkout.php">View Cart</a></li>
 				<li class="check"><a href="checkout.php">Checkout</a></li>
+				<li><form action="logout.php" method="post"><button type="submit" name="logout" class="butt" onclick="document.getElementById('id02').style.display='block'">
+         		LogOut</button></form></li>
 				<div class='clearfix'></div>
 		     </ul>
 			<div class="search">

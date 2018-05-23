@@ -123,7 +123,7 @@
 				  </div>
 				  <div>
 					<span>ID Cust<label>*</label></span>
-					<input type="text" name="idcust"> 
+					<input type="password" name="idcust"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
 				  <input type="submit" value="Login" name="submit">

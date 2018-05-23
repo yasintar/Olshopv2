@@ -1,3 +1,14 @@
+<?php
+	session_start();
+
+	if(isset($_SESSION['user']) != 1){
+		echo "<script>
+			alert('you need to login as admin first');
+			window.location.assign('login.php');
+			</script>";
+	}
+	
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -57,7 +68,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><a href="login.php">Login</a></li>
+				<li class="login_text"><form action="logout.php" method="post"><button type="submit" name="logout">Log Out</button></form></li>
 				<li class="wish"><a href="checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
@@ -73,17 +84,21 @@
 		  </div>
 		</div>
     </div>
-   <div class="main">
+    <div class="main">
 	  <div class="content_box">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3">
 					<div class="menu_box">
-				   	  	<h3 class="menu_head">Menu</h3>
+				   	  	<h3 class="menu_head">Query</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="about.php">Women</a></li>
-					   	  	<li><a href="about.php">Men</a></li>
-					   	  	<li><a href="about.php">Kids</a></li>
+					   	  	<li><a href="query/view.php">View</a></li>
+					   	  	<li><a href="query/function.php">Function</a></li>
+					   	  	<li><a href="query/view.php">Trigger</a></li>
+					   	  	<li><a href="query/view.php">Procedure</a></li>
+					   	  	<li><a href="query/view.php">Join</a></li>
+					   	  	<li><a href="query/view.php">Index</a></li>
+					   	  	<li><a href="query/view.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>
@@ -114,7 +129,8 @@
 				 <a class="acount-btn" href="register.php">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right">
-			  	<h3>ADMIN LOG IN</h3>
+			  	<h3>REGISTERED CUSTOMERS</h3>
+				<p>If you have an account here, please log in.</p>
 				<form method="post" action="val_access.php">
 				  <div>
 					<span>Name<label>*</label></span>
@@ -122,7 +138,7 @@
 				  </div>
 				  <div>
 					<span>ID Cust<label>*</label></span>
-					<input type="password" name="passw"> 
+					<input type="password" name="idcust"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>
 				  <input type="submit" value="Login" name="submit">

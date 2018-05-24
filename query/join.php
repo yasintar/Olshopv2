@@ -124,72 +124,47 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			   	<div class="col-md-6 login-right">
-				<h3>PROCEDURE (Pajak 10% untuk semua barang dalam 1 transaksi)</h3>
-				<h5>Klik untuk meng-apply pajak</h5>
-				<form method="post" action="procedure.php">
-					<input type="submit" name="callpjk" value="CALL">
-				</form>
-				 <?php
-				 	if(isset($_POST["callpjk"])){
-
-						include ("../config.php");
-					 
-						$sql = "CALL pajak_trx()";
-					 
-						mysqli_query($conn, $sql) or die("Error, query failed!");
-						#echo "berhasil";
-						echo "<script>
-				             alert('Pajak berhasil diberikan'); 
-				    		</script>";
-
-					}
-				 ?>
-			   <h3>Tabel Order Barang</h3>
-				<div class="dwdcuy">
-				<table align="center">
-					<tr>
-						<th>Order ID</th>
-						<th>ID Bayar</th>
-						<th>ID Pembeli</th>
-						<th>Qty</th>
-						<th>Harga Total</th>
-						<th>Tanggal Transaksi</th>
-						<th>Harga + PPN</th>
-					</tr>
-					<?php
-						include('../config.php');
-						$sql = "SELECT * FROM order_brg order by od_id";
-						$res = mysqli_query($conn, $sql);
-						//if(mysqli_num_rows($sql) > 0){
-						$no = 1;
-						while($data = $res->fetch_object()){
-							$odid = $data->od_id;
-							$byrid = $data->byr_id;
-							$pblid = $data->pbl_id;
-							$jlh = $data->od_jumlah;
-							$ttl = $data->od_total;
-							$tglbeli = $data->od_tglbeli;
-							$ttlpajak = $data->od_total_pjk;
-							echo '
-								<tr bgcolor="#fff">
-									<td align="center">'.$odid.'</td>
-									<td align="center">'.$byrid.'</td>
-									<td align="center">'.$pblid.'</td>
-									<td align="center">'.$jlh.'</td>
-									<td align="center">'.$ttl.'</td>
-									<td align="center">'.$tglbeli.'</td>
-									<td align="center">'.$ttlpajak.'</td>
-								</tr>
-							';
-							$no++;
-						}				
-					?>
-				</table>
-				</div>
-			   </div>
 			    <div class="col-md-6 login-left">
-			  	 <h3>VIEW (barang belum terjual)</h3>
+			  	 <h3>JOIN (detail barang yang dibeli pelanggan)</h3>
+			  	 <div class="dwdcuy">
+				  <table align="center">
+						<tr>
+							<th>Barang</th>
+							<th>Jumlah</th>
+						</tr>
+						<?php
+						 	include ('../config.php');
+
+							$sql = "SELECT barang.brg_nama, SUM(detail_order.jumlah) AS jumlah
+									FROM pembeli
+									JOIN order_brg ON pembeli.pbl_id = order_brg.pbl_id
+									JOIN detail_order ON order_brg.od_id = detail_order.od_id
+									JOIN barang ON detail_order.brg_id = barang.brg_id
+									AND pembeli.pbl_status = 'pelanggan'
+									GROUP BY barang.brg_nama";
+				 	
+							$res = mysqli_query($conn, $sql);
+
+							//if(mysqli_num_rows($sql) > 0){
+								//$no = 1;
+								while($rows = $res->fetch_object()){
+									$brg = $rows->brg_nama;
+									$jlh = $rows->jumlah;
+									echo '
+									<tr bgcolor="#fff">
+										<td>'.$brg.'</td>
+										<td align="center">'.$jlh.'</td>
+									</tr>
+									';
+									//$no++;
+								}				
+						?>
+					</table>
+					</div>
+			    </div>
+
+			   <div class="col-md-6 login-right">
+				<h3>VIEW (barang belum terjual)</h3>
 				 <?php
 				 	include ('../config.php');
 
@@ -214,9 +189,7 @@
 					}
 				 	
 				 ?>
-			    </div>
-
-			   	
+			   </div>	
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>

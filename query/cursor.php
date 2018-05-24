@@ -125,22 +125,22 @@
 			   </div>
 			   <div class="account_grid">
 			   	<div class="col-md-6 login-right">
-				<h3>PROCEDURE (Pajak 10% untuk semua barang dalam 1 transaksi)</h3>
-				<h5>Klik untuk meng-apply pajak</h5>
-				<form method="post" action="procedure.php">
-					<input type="submit" name="callpjk" value="CALL">
+				<h3>CURSOR (Discount 10% untuk pelanggan membeli > 1.000.000)</h3>
+				<h5>Klik untuk meng-apply discount (setelah diberi pajak)</h5>
+				<form method="post" action="cursor.php">
+					<input type="submit" name="calldisc" value="CALL">
 				</form>
 				 <?php
-				 	if(isset($_POST["callpjk"])){
+				 	if(isset($_POST["calldisc"])){
 
 						include ("../config.php");
 					 
-						$sql = "CALL pajak_trx()";
+						$sql = "CALL disc_order()";
 					 
 						mysqli_query($conn, $sql) or die("Error, query failed!");
 						#echo "berhasil";
 						echo "<script>
-				             alert('Pajak berhasil diberikan'); 
+				             alert('Discount berhasil diberikan'); 
 				    		</script>";
 
 					}

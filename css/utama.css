@@ -1,0 +1,13 @@
+.dwdcuy table{
+  margin-bottom: 100px; 
+  border-collapse: collapse;
+  width: 56%;
+  text-align: center;
+}
+.dwdcuy th, td {
+    text-align: left;
+    padding: 8px;
+}
+.dwdcuy table tr:nth-child(even){
+  background-color: #f1f1f1;
+}

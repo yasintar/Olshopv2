@@ -22,6 +22,7 @@
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -123,6 +124,56 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
+			   	<div class="col-md-6 login-right">
+				<h3>PROCEDURE (Pajak 10% untuk semua barang dalam 1 transaksi)</h3>
+				<h5>Klik untuk meng-apply pajak</h5>
+				<form method="post" action="procedure.php">
+					<input type="submit" name="callpjk" value="CALL">
+				</form>
+				 
+			   <h3>Tabel Order Barang</h3>
+				<div class="dwdcuy">
+				<table align="center">
+					<tr>
+						<th>Order ID</th>
+						<th>ID Bayar</th>
+						<th>ID Pembeli</th>
+						<th>Qty</th>
+						<th>Harga Total</th>
+						<th>Tanggal Transaksi</th>
+						<th>Harga + PPN</th>
+					</tr>
+					<?php
+						include('../config.php');
+						$sql = "SELECT * FROM order_brg order by od_id";
+						$res = mysqli_query($conn, $sql);
+						//if(mysqli_num_rows($sql) > 0){
+						$no = 1;
+						while($data = $res->fetch_object()){
+							$odid = $data->od_id;
+							$byrid = $data->byr_id;
+							$pblid = $data->pbl_id;
+							$jlh = $data->od_jumlah;
+							$ttl = $data->od_total;
+							$tglbeli = $data->od_tglbeli;
+							$ttlpajak = $data->od_total_pjk;
+							echo '
+								<tr bgcolor="#fff">
+									<td align="center">'.$odid.'</td>
+									<td align="center">'.$byrid.'</td>
+									<td align="center">'.$pblid.'</td>
+									<td align="center">'.$jlh.'</td>
+									<td align="center">'.$ttl.'</td>
+									<td align="center">'.$tglbeli.'</td>
+									<td align="center">'.$ttlpajak.'</td>
+								</tr>
+							';
+							$no++;
+						}				
+					?>
+				</table>
+				</div>
+			   </div>
 			    <div class="col-md-6 login-left">
 			  	 <h3>VIEW (barang belum terjual)</h3>
 				 <?php
@@ -151,33 +202,7 @@
 				 ?>
 			    </div>
 
-			   <div class="col-md-6 login-right">
-				<h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
-
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			   </div>	
+			   	
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>

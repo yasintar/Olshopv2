@@ -118,68 +118,108 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.php">Back to Previous Page</a></li>
+                	<li><a href="index.php">Trigger (2)</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			    <div class="col-md-6 login-left">
-			  	 <h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
+			   	<div class="row login-right">
+			   		<h3>TRIGGER (hapus record di tabel order barang)</h3>
+						<form method="post" action="trigger.php">
+					  	 	<div>
+								<span>ID Order<label>*</label></span>
+								<input type="text" name="idorder"> 
+							</div>
+						  	<input type="submit" value="Delete" name="subdelete">
+					  	 </form>
+					  	 <?php
+					  	 	include ('../config.php');
 
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
+							if(isset($_POST['subdelete'])) {
+						  		if(isset($_POST['idorder'])){
+									$idorder = $_POST['idorder'];
 
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			    </div>
+									$sql = "DELETE FROM order_brg WHERE od_id = '$idorder'";
 
-			   <div class="col-md-6 login-right">
-				<h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
+									mysqli_query($conn, $sql) or die("Error, query failed!");
+									
+									echo "<script>
+							             alert('Delete Successfully'); 
+							    		</script>";
+								}
+							}
+					  	 ?>	
+				</div>
+				<div class="row">
+					<div class="col-md-6 login-right">
+					  	 <h3>Tabel Order Barang</h3>
+					  	 <table align="center">
+						<tr>
+							<th>Order ID</th>
+							<th>ID Bayar</th>
+							<th>ID Pembeli</th>
+							<th>Jumlah Order</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM order_brg order by od_id";
+							$res = mysqli_query($conn, $sql);
 
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
+							//if(mysqli_num_rows($sql) > 0){
+								$no = 1;
+								while($data = $res->fetch_object()){
+									$odid = $data->od_id;
+									$byrid = $data->byr_id;
+									$pblid = $data->pbl_id;
+									$jlh = $data->od_jumlah;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$odid.'</td>
+										<td align="center">'.$byrid.'</td>
+										<td align="center">'.$pblid.'</td>
+										<td align="center">'.$jlh.'</td>
+									</tr>
+									';
+									$no++;
+								}				
+						?>
+					</table>
+					   </div>
+					   <div class="col-md-6 login-right">
+					  	 <h3>Tabel Detail Order</h3>
+						 <table align="center">
+						<tr>
+							<th>Order ID</th>
+							<th>ID Barang</th>
+							<th>Jumlah Order</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM detail_order order by od_id";
+							$res = mysqli_query($conn, $sql);
 
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			   </div>	
-			   <div class="clearfix"> </div>
+							//if(mysqli_num_rows($sql) > 0){
+								//$no = 1;
+								while($data2 = $res->fetch_object()){
+									$odid2 = $data2->od_id;
+									$brgid = $data2->brg_id;
+									$jlh2 = $data2->jumlah;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$odid2.'</td>
+										<td align="center">'.$brgid.'</td>
+										<td align="center">'.$jlh2.'</td>
+									</tr>
+									';
+									//$no++;
+								}				
+						?>
+					</table>
+					    </div>
+					    <div class="clearfix"> </div>		 	
+				</div>
 			 </div>
+			    
 		   </div>
 		  </div>
 	     </div>

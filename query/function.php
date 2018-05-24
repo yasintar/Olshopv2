@@ -94,11 +94,11 @@
 				   	     <ul class="nav">
 					   	  	<li class="nav-item active"><a href="view.php">View</a></li>
 					   	  	<li><a href="function.php">Function</a></li>
-					   	  	<li><a href="view.php">Trigger</a></li>
-					   	  	<li><a href="view.php">Procedure</a></li>
-					   	  	<li><a href="view.php">Join</a></li>
-					   	  	<li><a href="view.php">Index</a></li>
-					   	  	<li><a href="view.php">Cursor</a></li>
+					   	  	<li><a href="trigger.php">Trigger</a></li>
+					   	  	<li><a href="procedure.php">Procedure</a></li>
+					   	  	<li><a href="join.php">Join</a></li>
+					   	  	<li><a href="index.php">Index</a></li>
+					   	  	<li><a href="cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>
@@ -152,7 +152,9 @@
 									";
 								}
 							}else{
-								echo "tidak ada komentar";
+								echo "<div align='center'>
+										<h1>Tidak ada pembeli tersebut<h1>
+									</div>";
 							}
 						}
 					}

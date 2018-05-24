@@ -94,11 +94,11 @@
 				   	     <ul class="nav">
 					   	  	<li><a href="query/view.php">View</a></li>
 					   	  	<li><a href="query/function.php">Function</a></li>
-					   	  	<li><a href="query/view.php">Trigger</a></li>
-					   	  	<li><a href="query/view.php">Procedure</a></li>
-					   	  	<li><a href="query/view.php">Join</a></li>
-					   	  	<li><a href="query/view.php">Index</a></li>
-					   	  	<li><a href="query/view.php">Cursor</a></li>
+					   	  	<li><a href="query/trigger.php">Trigger</a></li>
+					   	  	<li><a href="query/procedure.php">Procedure</a></li>
+					   	  	<li><a href="query/join.php">Join</a></li>
+					   	  	<li><a href="query/index.php">Index</a></li>
+					   	  	<li><a href="query/cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>

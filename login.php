@@ -81,9 +81,9 @@
 					<div class="menu_box">
 				   	  	<h3 class="menu_head">Menu</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="about.php">Women</a></li>
-					   	  	<li><a href="about.php">Men</a></li>
-					   	  	<li><a href="about.php">Kids</a></li>
+					   	  	<li><a href="women.php">Women</a></li>
+					   	  	<li><a href="men.php">Men</a></li>
+					   	  	<li><a href="kids.php">Kids</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>

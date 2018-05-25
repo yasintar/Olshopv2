@@ -53,14 +53,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a href=""><i class="pin"> </i> </a></li>
 				<li><a href=""><i class="instagram"> </i> </a></li>
 			 </ul>
-		    <div class="lang_list">
-			  <select tabindex="4" class="dropdown">
-				<option value="" class="label" value="">En</option>
-				<option value="1">English</option>
-				<option value="2">French</option>
-				<option value="3">German</option>
-			  </select>
-   			</div>
 			<div class="clearfix"></div>
           </div>
           <div class="clearfix"></div>
@@ -91,21 +83,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="menu_box">
 							<h3 class="menu_head">Menu</h3>
 							 <ul class="nav">
-								<li><a href="about.php">About</a></li>
-								<li><a href="about.php">Living Room</a></li>
-								<li><a href="about.php">Office Furniture</a></li>
-								<li><a href="about.php">Bean Bags</a></li>
-								<li><a href="about.php">Tables</a></li>
-								<li><a href="about.php">Sofas</a></li>
-								<li><a href="about.php">Wardrobes</a></li>
-								<li><a href="about.php">Beds</a></li>
-								<li><a href="typo.php">Typo</a></li>
-								<li><a href="about.php">Chairs</a></li>
-								<li><a href="about.php">Kids Beds</a></li>
+								<li><a href="women.php">Women</a></li>
+					   	  		<li><a href="men.php">Men</a></li>
+					   	  		<li><a href="kids.php">Kids</a></li>
 							 </ul>
 						</div>
 						<div class="side_banner">
-							<div class="banner_img"><img src="images/pic9.jpg" class="img-responsive" alt=""/></div>
+						    <div class="banner_img"><img src="images/isopen.jpg" class="img-responsive" alt=""/></div>
 							<div class="banner_holder">
 								<h3>Now <br> is <br> Open!</h3>
 							</div>
@@ -118,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<a href="index.php" title="Go to Home Page">Home</a>&nbsp;
 									<span>&gt;</span>
 								</li>
-								<li class="women">Contact Us</li>
+								<li class="women">Contact Me</li>
 							</ul>
 							<ul class="previous">
 								<li><a href="index.php">Back to Previous Page</a></li>
@@ -147,29 +131,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="address">
 									<i class="pin_icon"></i>
 									<div class="contact_address">
-									  Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non
+									  Jl. Teknik Kimia, Gedung Teknik Informatika, Kampus ITS Sukolilo, Surabaya, 60111
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<div class="address">
 									<i class="phone"></i>
 									<div class="contact_address">
-									   1-25-2568-897
+									   +6231 – 5939214
 									</div>
 									<div class="clearfix"></div>
 								</div>
 								<div class="address">
 									<i class="mail"></i>
 									<div class="contact_email">
-										<p>Email : <a href="mailto:example@mail.com">mail@example.com</a></p>
+										<p>Email : <a href="mailto:example@mail.com">me@rona.mbd</a></p>
 									</div>
 									<div class="clearfix"></div>
 								</div>
 							</div>
 							<div class="clearfix"></div>
-						</div>
-						<div class="map">   	 
-							<iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
 						</div>
 					</div>
 				</div>
@@ -190,30 +171,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	    <div class="container">
 	      <div class="instagram_top">
 	      	<div class="instagram text-center">
-				<h3>Our Collections</h3>
+				<h3><a href="index.php">More Collections</a></h3>
 			</div>
-	        <ul class="instagram_grid">
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i1.jpg" class="img-responsive"alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i2.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i3.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i4.jpg" class="img-responsive" alt=""/></a></li>
-			  <li><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i5.jpg" class="img-responsive" alt=""/></a></li>
-			  <li class="last_instagram"><a class="popup-with-zoom-anim" href="#small-dialog1"><img src="images/i6.jpg" class="img-responsive" alt=""/></a></li>
-			  <div class="clearfix"></div>
-			  <div id="small-dialog1" class="mfp-hide">
-				<div class="pop_up">
-					<h4>A Sample Photo Stream</h4>
-					<img src="images/i_zoom.jpg" class="img-responsive" alt=""/>
-				</div>
-			  </div>
+			<ul class="instagram_grid">
+				<li><a class="popup-with-zoom-anim" href=""><img src="images/sandal.jpg" class="img-responsive" alt=""/></a></li>
+				<li><a class="popup-with-zoom-anim" href=""><img src="images/tape.jpg" class="img-responsive" alt=""/></a></li>
+				<li><a class="popup-with-zoom-anim" href=""><img src="images/pumps.jpg" class="img-responsive" alt=""/></a></li>
+				<li><a class="popup-with-zoom-anim" href=""><img src="images/loaf.jpg" class="img-responsive" alt=""/></a></li>
+				<li><a class="popup-with-zoom-anim" href=""><img src="images/sneak.jpg" class="img-responsive" alt=""/></a></li>
+				<li class="last_instagram"><a class="popup-with-zoom-anim" href=""><img src="images/wedges.jpg" class="img-responsive" alt=""/></a></li>
+				<div class="clearfix"></div>
 			</ul>
 		  </div>
 	      <ul class="footer_social">
-			<li><a href="#"> <i class="fb"> </i> </a></li>
-			<li><a href="#"><i class="tw"> </i> </a></li>
+			<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow" title="RN TW"> <i class="tw"> </i> </a></li>
+			<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow" title="RN FB"> <i class="fb"> </i> </a></li>			
 			<li><a href="#"><i class="pin"> </i> </a></li>
 			<div class="clearfix"></div>
-		   </ul>
+		  </ul>
 	    </div>
         <div class="footer">
 		<div class="container">
@@ -247,14 +222,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				  <li><a href="about.php">Search Terms</a></li>
 				  <li><a href="about.php">Advanced Search</a></li>
 				  <li><a href="about.php">Mobile</a></li>
-				  <li><a href="contact.php">Contact Us</a></li>
+				  <li><a href="contact.php">Contact Me</a></li>
 				  <li><a href="contact.php">Mobile</a></li>
 				  <li><a href="contact.php">Addresses</a></li>
 				</ul>
 			</div>
 			<div class="footer-grid">
-				<h3>Newsletter</h3>
-				<p class="footer_desc">Nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat</p>
+				<h3>Newest Collection</h3>
+					<p class="footer_desc">I will notify you if there is something new here.</p>
 				<div class="search_footer">
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 				  <input type="submit" value="Subscribe">

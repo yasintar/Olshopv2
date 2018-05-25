@@ -99,26 +99,26 @@
 			   	    <div class="category">
 			   	    	<h3 class="menu_head">Various Models</h3>
 			   	    	<ul class="category_nav">
-					   	  	<li><a href="#">Trousers</a></li>
-					   	  	<li><a href="#">Jacket</a></li>
+					   	  	<li><a href="#">Cullote</a></li>
+					   	  	<li><a href="#">Outer</a></li>
 					   	  	<li><a href="#">Blazer</a></li>
-					   	  	<li><a href="#">Shorts</a></li>
-					   	  	<li><a href="#">Sweater</a></li>
-					   	  	<li><a href="#">T-Shirt</a></li>
-					   	  	<li><a href="#">Sneakers</a></li>
-					   	  	<li><a href="#">Loafers</a></li>
-					   	  	<li><a href="#">Shirt</a></li>
+					   	  	<li><a href="#">Cardigan</a></li>
+					   	  	<li><a href="#">Sweatshirt</a></li>
+					   	  	<li><a href="#">Tops</a></li>
+					   	  	<li><a href="#">Sandals</a></li>
+					   	  	<li><a href="#">Pumps</a></li>
+					   	  	<li><a href="#">Wedges</a></li>
 					   	</ul>
 			   	    </div>
 			   	    <div class="tags">
 				    	<h4 class="tag_head">Tags</h4>
 				         <ul class="tags_links">
+				         	<li><a href="#">Recommended</a></li>
 							<li><a href="#">Casual</a></li>
-							<li><a href="#">Recommended</a></li>
-							<li><a href="#">Colorful</a></li>
-							<li><a href="#">Modest</a></li>
-							<li><a href="#">Formal</a></li>
-							<li><a href="#">Men</a></li>
+							<li><a href="#">Colorful</a></li> <br>
+							<li><a href="#">Modest</a></li> <br>
+							<li><a href="#">Formal</a></li> <br>
+							<li><a href="#">Women</a></li>
 						</ul>
 				     </div>
 				     <div class="side_banner">
@@ -136,7 +136,7 @@
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        Men&nbsp;
+                        Women&nbsp;
                         <span>&gt;</span>&nbsp;
                     </li>                    
                 </ul>
@@ -162,9 +162,9 @@
     		     </div>
     	         <ul class="women_pagenation dc_paginationA dc_paginationA06">
 			       <li><a href="#" class="previous">Page:</a></li>
-			       <li class="active"><a href="men.php">1</a></li>
-			       <li><a href="men2.php">2</a></li>
-			       <li><a href="men2.php">next page >></a></li>
+			        <li><a href="women.php">1</a></li>
+			       <li class="active"><a href="women2.php">2</a></li>
+			       <li><a href="women.php"><< previous page</a></li>
 		  	     </ul>
                 <div class="clearfix"></div>		
 		        </div>		
@@ -188,19 +188,19 @@
 							<a class="cbp-vm-image" href="single.php">
 							<div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/mensporty.jpg" class="img-responsive" alt=""/>
+									<img src="images/cationmaxi.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Sporty Jacket</p>
+										 <p class="title">Cation Maxi Top</p>
 									   </div>
-									   <div class="mount item_price price">Rp230.000</div>
+									   <div class="mount item_price price">Rp310.000</div>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								With brilliant sporty jackets, you’re sure to find the perfect jacket for cool summer days.
+								From comfy cotton tees perfect for the the cornerstone of your wardrobe this season.
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -208,30 +208,10 @@
 							<a class="cbp-vm-image" href="single.php">
 							 <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/roundneck.jpg" class="img-responsive" alt=""/>
+									<img src="images/blcullote.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Round Neck T-Shirt</p>
-									   </div>
-									   <div class="price">Rp90.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								Perfect t-shirt for warmer days and stylish layering. Relax in simple cotton basics.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/shirt.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Regular Soft Stripe Shirt</p>
+										 <p class="title">Black Tie Up Cullote</p>
 									   </div>
 									   <div class="price">Rp150.000</div>
 									   <div class="clearfix"></div>
@@ -240,27 +220,7 @@
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								For when your shirt needs to be sharp and in non-iron tech and match to striped styles.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							   <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/pumajacket.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Puma Men Jacket</p>
-									   </div>
-									   <div class="price">Rp350.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                   </div>
-							</a>
-							<div class="cbp-vm-details">
-								With brilliant sporty jackets, you’re sure to find the perfect jacket for cool summer days.
+								Perfect for brightening dull days, to see you through the summer and beyond.
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -268,44 +228,84 @@
 							<a class="cbp-vm-image" href="single.php">
 							  <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/vnecktshirt.jpg" class="img-responsive" alt=""/>
+									<img src="images/navy.jpg" class="img-responsive" alt=""/>
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Solid V-Neck T-Shirt</p>
+										 <p class="title">Navy Tie Up Cullote</p>
 									   </div>
-									   <div class="price">Rp100.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-							</a>
-							<div class="cbp-vm-details">
-								Perfect t-shirt for warmer days and stylish layering. Relax in simple cotton basics.
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/casblazer.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Casual Blazer</p>
-									   </div>
-									   <div class="price">Rp250.000</div>
+									   <div class="price">Rp150.000</div>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
 			                     </div>
 		                    </a>
 							<div class="cbp-vm-details">
-								Your shortcut to ‘sharp’ starts with our precision-cut blazers.
+								Perfect for brightening dull days, to see you through the summer and beyond.
+							</div>
+							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+						</li>
+						<li class="simpleCart_shelfItem">
+							<a class="cbp-vm-image" href="single.php">
+							   <div class="inner_content clearfix">
+								<div class="product_image">
+									<img src="images/womenpumps.jpg" class="img-responsive" alt=""/>
+									<div class="product_container">
+									   <div class="cart-left">
+										 <p class="title">Women Pumps</p>
+									   </div>
+									   <div class="price">Rp200.000</div>
+									   <div class="clearfix"></div>
+								     </div>		
+								  </div>
+			                   </div>
+							</a>
+							<div class="cbp-vm-details">
+								Keep in step with the latest footwear trends. Happy feet equals happy days.
+							</div>
+							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+						</li>
+						<li class="simpleCart_shelfItem">
+							<a class="cbp-vm-image" href="single.php">
+							  <div class="inner_content clearfix">
+								<div class="product_image">
+									<img src="images/womensandals.jpg" class="img-responsive" alt=""/>
+									<div class="product_container">
+									   <div class="cart-left">
+										 <p class="title">Women Sandals</p>
+									   </div>
+									   <div class="price">Rp150.000</div>
+									   <div class="clearfix"></div>
+								     </div>		
+								  </div>
+			                     </div>
+							</a>
+							<div class="cbp-vm-details">
+								Keep in step with the latest footwear trends. Happy feet equals happy days.
+							</div>
+							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+						</li>
+						<li class="simpleCart_shelfItem">
+							<a class="cbp-vm-image" href="single.php">
+							  <div class="inner_content clearfix">
+								<div class="product_image">
+									<img src="images/solidwedges.jpg" class="img-responsive" alt=""/>
+									<div class="product_container">
+									   <div class="cart-left">
+										 <p class="title">Solid Wedges</p>
+									   </div>
+									   <div class="price">Rp270.000</div>
+									   <div class="clearfix"></div>
+								     </div>		
+								  </div>
+			                     </div>
+							</a>
+							<div class="cbp-vm-details">
+								Keep in step with the latest footwear trends. Happy feet equals happy days.
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
 					</ul>
-					<a href="men2.php" class="link1">View next page</a>
+					<a href="women.php" class="link1">back to previous page</a>
 				</div>
 				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="js/classie.js" type="text/javascript"></script>

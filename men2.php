@@ -162,9 +162,9 @@
     		     </div>
     	         <ul class="women_pagenation dc_paginationA dc_paginationA06">
 			       <li><a href="#" class="previous">Page:</a></li>
-			       <li class="active"><a href="men.php">1</a></li>
+			       <li><a href="men.php">1</a></li>
 			       <li class="active"><a href="men2.php">2</a></li>
-			       <li class="active"><a href="men.php">previous page >> </a></li>
+			       <li><a href="men.php"><< previous page</a></li>
 		  	     </ul>
                 <div class="clearfix"></div>		
 		        </div>		
@@ -178,7 +178,7 @@
                <label>Show</label>
                   <select>
                             <option value="" selected="selected">
-                    6                </option>
+                    5                </option>
                   </select> per page        
                </div>
        	   </div>
@@ -260,7 +260,7 @@
 			                   </div>
 							</a>
 							<div class="cbp-vm-details">
-								It’s easy to take everything in your stride when you’re wearing the perfect pair of casual trousers.
+								Easier to take everything in your stride when you’re wearing a pair of casual trousers.
 							</div>
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
@@ -285,7 +285,7 @@
 							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
 						</li>
 					</ul>
-					<a href="#" class="link1">back to previous page</a>
+					<a href="men.php" class="link1">back to previous page</a>
 				</div>
 				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="js/classie.js" type="text/javascript"></script>
@@ -372,7 +372,7 @@
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 				  <input type="submit" value="Subscribe">
 				</div>
-				<img src="images/payment.png" class="img-responsive" alt=""/>
+				<img src="images/pay.png" class="img-responsive" alt=""/>
 			</div>
 			 <div class="clearfix"> </div>
 		</div>

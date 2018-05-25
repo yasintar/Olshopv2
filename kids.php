@@ -417,7 +417,7 @@
 				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
 				  <input type="submit" value="Subscribe">
 				</div>
-				<img src="images/payment.png" class="img-responsive" alt=""/>
+				<img src="images/pay.png" class="img-responsive" alt=""/>
 			</div>
 			 <div class="clearfix"> </div>
 		</div>

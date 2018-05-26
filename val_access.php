@@ -10,6 +10,7 @@
 
       $sql = "SELECT * FROM admin where username = '$user' and pass_word = '$pass'";
       $result = mysqli_query($conn, $sql) or die("Error, query failed!");
+      
       $rows = $result->fetch_assoc();
       $nama = $rows['username'];
       $passw = $rows['password'];

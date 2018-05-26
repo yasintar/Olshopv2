@@ -82,7 +82,7 @@
 		  			</div>
 		  			<div class="welcome_box">
 		  				<h3>Welcome to </br>R O N A</h3> <br>
-		  				<a href="register.php"><img src="images/register.png"></a>
+		  				<a href="register.php"><img src="images/buynow.png"></a>
 		  			</div>
 	   		 	</div>
 	   		 	<div class="banner_right">

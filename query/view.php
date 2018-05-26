@@ -152,31 +152,35 @@
 			    </div>
 
 			   <div class="col-md-6 login-right">
-				<h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
+				<h3>VIEW (barang terjual)</h3>
+				 <table align="center">
+						<tr>
+							<th>ID barang</th>
+							<th>Nama barang</th>
+							<th>Jumlah dibeli</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM vibarang";
+							$res = mysqli_query($conn, $sql);
 
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
+							//if(mysqli_num_rows($sql) > 0){
+								$no = 1;
+								while($rows = $res->fetch_object()){
+									$id = $rows->brg_id;
+									$nama = $rows->brg_nama;
+									$jlh = $rows->jumlah_terjual;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$id.'</td>
+										<td align="center">'.$nama.'</td>
+										<td align="center">'.$jlh.'</td>
+									</tr>
+									';
+									$no++;
+								}				
+						?>
+					</table>
 			   </div>	
 			   <div class="clearfix"> </div>
 			 </div>

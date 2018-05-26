@@ -162,27 +162,27 @@
 			    </div>
 
 			   <div class="col-md-6 login-right">
-				<h3>FUNCTION (total harga pembeli)</h3>
+				<h3>FUNCTION (barang terjual)</h3>
 			  	 <form method="post" action="function.php">
 			  	 	<div>
-						<span>Nama Pembeli<label>*</label></span>
-						<input type="text" name="namapbl"> 
+						<span>Nama Barang<label>*</label></span>
+						<input type="text" name="namabrg"> 
 					</div>
-				  	<input type="submit" value="Find" name="submit">
+				  	<input type="submit" value="Find" name="submitbrg">
 			  	 </form>
 				 <?php
 				 	include ('../config.php');
 
-					if(isset($_POST['submit'])) {
-				  		if(isset($_POST['namapbl'])){
-							$user = $_POST['namapbl'];
+					if(isset($_POST['submitbrg'])) {
+				  		if(isset($_POST['namabrg'])){
+							$brg = $_POST['namabrg'];
 
-							$sql = "SELECT total_harga('$user') as  total";
+							$sql = "SELECT DISTINCT penjualan('$brg') AS jml_terjual;";
 							$result = mysqli_query($conn, $sql);
 
 							if($result->num_rows != 0){
 								while ($rows = $result->fetch_object()) {
-									$id = $rows->total;
+									$id = $rows->jml_terjual;
 									echo "
 										<div align='center'>
 											<h1>$id</h1><br>

@@ -62,14 +62,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<li><a href=""><i class="pin"> </i> </a></li>
 				<li><a href=""><i class="instagram"> </i> </a></li>
 			 </ul>
-		    <div class="lang_list">
-			  <select tabindex="4" class="dropdown">
-				<option value="" class="label" value="">En</option>
-				<option value="1">English</option>
-				<option value="2">French</option>
-				<option value="3">German</option>
-			  </select>
-   			</div>
 			<div class="clearfix"></div>
           </div>
           <div class="clearfix"></div>

@@ -58,7 +58,7 @@
 			 <div class="banner_wrap">
 				<div class="bannertop_box">
 	   		 		<ul class="login">
-	   		 			<li class="login_text"><a href="login.php">Login</a></li>
+	   		 			<li class="login_text"><a href="login.php">login</a></li>
 	   		 			<li class="wish"><a href="checkout.php">Wish List</a></li>
 	   		 			<div class='clearfix'></div>
 	   		 		</ul>
@@ -102,9 +102,9 @@
 						<div class="menu_box">
 					   	  	<h3 class="menu_head">Menu</h3>
 					   	     <ul class="nav">
-						   	  	<li><a href="about.php">Women</a></li>
-						   	  	<li><a href="about.php">Men</a></li>
-						   	  	<li><a href="about.php">Kids</a></li>
+						   	  	<li><a href="women.php">Women</a></li>
+					   	  		<li><a href="men.php">Men</a></li>
+					   	  		<li><a href="kids.php">Kids</a></li>
 						   	 </ul>
 				   	    </div>
 				   	    <div class="side_banner">
@@ -114,7 +114,7 @@
 						   </div>
 					    </div>
 					    <div class="tags">
-					    	<h4 class="tag_head">Tags Widget</h4>
+					    	<h4 class="tag_head">Tags</h4>
 					         <ul class="tags_links">
 								<li><a href="#">Casual</a></li>
 								<li><a href="#">Formal</a></li>
@@ -127,15 +127,15 @@
 							</ul>
 							
 					    </div>
-					     <div class="tags">
+					    <div class="tags">
 					      	<h4 class="tag_head">Terms and Conditions</h4>
 					      	 <ul class="article_links">
 					      	 	<li>1. All items are new.</li>
 								<li>2. You can return the item within 14 days of receiving it.</li>
 								<li>3. The item is returned unworn, unwashed and in original condition.</li>
 								<li>4. All original labels and tags are still attached to the item.</li>
-								<li>5. You provide the original RONA Clothing receipt as proof of purchase.</li>
-								<li>6. Reseller are welcome. Please kindly <a href="index.php">contact me</a>  to register.</li>
+								<li>5. You'll get the original RONA Clothing receipt as proof of purchase.</li>
+								<li>6. Reseller are welcome. Please kindly <a href="contact.php">contact me</a>  to register.</li>
 								<li>7. Accessing the website means that you agree to the terms and conditions.</li>
 								<li>8. These terms and conditions apply to www.ronaclothing.co.id.</li>
 								<li>9. I will endeavor to respond to your enquiry within 24 hours.</li>
@@ -144,7 +144,7 @@
 								<li>Best Regards,</li>
 								<li>Rona Weasley</li>
 							  </ul>
-					      </div>
+					    </div>
 					</div>
 				   <div class="col-md-9">
 					<h3 class="m_1">W O M E N</h3>

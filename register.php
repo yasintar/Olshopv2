@@ -1,3 +1,51 @@
+<?php
+	session_start();
+	require_once("dbcontroller.php");
+	$db_handle = new DBController();
+	if(!empty($_GET["action"])) {
+	switch($_GET["action"]) {
+		case "add":
+			if(!empty($_POST["quantity"])) {
+				$productByCode = $db_handle->runQuery("SELECT * FROM barang WHERE brg_id ='" . $_GET["brg_id"] . "'");
+				$itemArray = array($productByCode[0]["brg_id"]=>array('brg_nama'=>$productByCode[0]["brg_nama"], 'brg_id'=>$productByCode[0]["brg_id"], 'quantity'=>$_POST["quantity"], 'brg_harga'=>$productByCode[0]["brg_harga"]));
+				
+				if(!empty($_SESSION["cart_item"])) {
+					if(in_array($productByCode[0]["brg_id"],array_keys($_SESSION["cart_item"]))) {
+						foreach($_SESSION["cart_item"] as $k => $v) {
+								if($productByCode[0]["brg_id"] == $k) {
+									if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+										$_SESSION["cart_item"][$k]["quantity"] = 0;
+									}
+									$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+								}
+						}
+					} else {
+						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+					}
+				} else {
+					$_SESSION["cart_item"] = $itemArray;
+				}
+			}
+		break;
+		case "remove":
+			if(!empty($_SESSION["cart_item"])) {
+				foreach($_SESSION["cart_item"] as $k => $v) {
+						if($_GET["brg_id"] == $k)
+							unset($_SESSION["cart_item"][$k]);				
+						if(empty($_SESSION["cart_item"]))
+							unset($_SESSION["cart_item"]);
+				}
+			}
+		break;
+		case "empty":
+			unset($_SESSION["cart_item"]);
+		break;	
+	}
+	}
+?>
+
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -76,35 +124,94 @@
     <div class="main">
 	   <div class="container">
 		  <div class="register">
-		  	  <form> 
+		  	<div id="shopping-cart">
+
+<div class="txt-heading" align="center">Shopping Cart <!-- <a id="btnEmpty" href="checkout.php?action=empty">Empty Cart</a> --></div>
+<br>
+<?php
+if(isset($_SESSION["cart_item"])){
+    $item_total = 0;
+?>	
+<table cellpadding="10" cellspacing="1" align="center">
+<tbody>
+<tr>
+<th style="text-align:left;"><strong>Name</strong></th>
+<th style="text-align:left;"><strong>Code</strong></th>
+<th style="text-align:right;"><strong>Quantity</strong></th>
+<th style="text-align:right;"><strong>Price</strong></th>
+<!-- <th style="text-align:center;"><strong>Action</strong></th> -->
+</tr>	
+<?php		
+    foreach ($_SESSION["cart_item"] as $item){
+		?>
+				<tr>
+				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["brg_nama"]; ?></strong></td>
+				<td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["brg_id"]; ?></td>
+				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
+				<td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo "$".$item["brg_harga"]; ?></td>
+				<!-- <td style="text-align:center;border-bottom:#F0F0F0 1px solid;"><a href="index.php?action=remove&brg_id=<?php echo $item["brg_id"]; ?>" class="btnRemoveAction">Remove Item</a></td> -->
+				</tr>
+				<?php
+        $item_total += ($item["brg_harga"]*$item["quantity"]);
+		}
+		?>
+
+<tr>
+<td colspan="5" align=right><strong>Total:</strong> <?php echo "$".$item_total; ?></td>
+</tr>
+</tbody>
+</table>		
+  <?php
+}
+?>
+</div>
+		  	  <form method="post" action="reg.php"> 
 				 <div class="register-top-grid">
+
 					<h3>PERSONAL INFORMATION</h3>
+					<div>
+						<span>Order ID<label>*</label></span>
+						<input type="text" placeholder="ID terakhir + 1" name="odid"> 
+					 </div>
+					 <div>
+						<span>Pembeli ID<label>*</label></span>
+						<input type="text" placeholder="ID terakhir + 1" name="pid"> 
+					 </div>
 					 <div>
 						<span>Nama<label>*</label></span>
-						<input type="text"> 
+						<input type="text" name="namap"> 
 					 </div>
 					 <div>
 						<span>Alamat<label>*</label></span>
-						<input type="text"> 
+						<input type="text" name="alamatp"> 
 					 </div>
 					 <div>
 						 <span>Email Address<label>*</label></span>
-						 <input type="text"> 
+						 <input type="text" name="emailp"> 
 					 </div>
 					 <div>
 						<span>No Telepon<label>*</label></span>
-						<input type="text"> 
+						<input type="text" name="telpp"> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Daftar untuk lanjut belanja</label>
 					   </a>
 					 </div>
-				</form>
-				<div class="clearfix"> </div>
-				<div class="register-but">
-				   <form>
-					   <input type="submit" value="submit">
+				<!-- </form> -->
+					<div class="clearfix"> </div>
+					<div class="total-item">
+				 <h3>Choose a Payment</h3>
+					<select name="bayar">
+						<option value="bri">BRI</option>
+						<option value="bni">BNI</option>
+						<option value="mandiri">Mandiri</option>
+						<option value="bca">BCA</option>
+					</select>
+			 </div>
+					<div class="register-but">
+				   <!-- <form> -->
+					   <input type="submit" value="submit" name="blj">
 					   <br>
 					   <br>
 					   Please check email to check your ID customer, thank you.
@@ -113,7 +220,29 @@
 				</div>
 		   </div>
 	     </div>
+	     <?php
+						include ('config.php');
+
+						$sqli = "SELECT * FROM order_brg ORDER BY od_id DESC LIMIT 1";
+						$result2 = mysqli_query($conn, $sqli);
+
+						if($result2->num_rows != 0){
+							while ($rows = $result2->fetch_object()) {
+								$id = $rows->od_id;
+									echo "
+										<div align='center'>
+											<h3>ID terakhir :</h3>
+											<h4>$id</h4>
+										</div>
+										";
+							}
+						}else{
+							echo "tidak ada komentar";
+						}
+		?>
 	    </div>
+
+
 		<div class="container">
 			<div class="brands">
 				<ul class="brand_icons">

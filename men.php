@@ -12,6 +12,7 @@
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/utama.css" rel='stylesheet' type='text/css' />
 <link href="css/component.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
@@ -182,8 +183,53 @@
                   </select> per page        
                </div>
        	   </div>
+       	   <br><br>
+       	   <?php
+       	   require_once("dbcontroller.php");
+       	   $db_handle = new DBController();
+			$product_array = $db_handle->runQuery("SELECT * FROM barang where ktg_id = 'KTG02' ORDER BY brg_id ASC");
+	if (!empty($product_array)) { 
+		foreach($product_array as $key=>$value){
+	?>
+		<div class="product-item">
+			<form method="post" action="checkout.php?action=add&brg_id=<?php echo $product_array[$key]["brg_id"]; ?>">
+
+				<!-- <ul> -->
+					<!-- <li class="simpleCart_shelfItem"> -->
+					<div class="col-md-4 simpleCart_shelfItem">
+						<a class="cbp-vm-image" href="single.php">
+							<div class="inner_content clearfix">
+								<div class="product_image picthehe">
+									<img src="images/<?php echo $product_array[$key]["brg_id"];?>.jpg">
+									<div class="product_container">
+									   <div class="cart-left">
+										 <div><strong><?php echo $product_array[$key]["brg_nama"]; ?></strong></div>
+									   </div>
+									   <div class="product-price"><?php echo $product_array[$key]["brg_harga"]; ?></div>
+									   <div class="clearfix"></div>
+								    </div>		
+								</div>
+			                </div>
+		                </a>
+						<div class="cbp-vm-details">
+							Men
+						</div>
+						<div>
+							<input type="text" name="quantity" value="1" size="2" />
+							<input type="submit" value="Add to cart" class="btnAddAction button item_add cbp-vm-icon cbp-vm-add" />
+						</div>
+						</div>
+					<!-- </li>
+				</ul> -->
+			</form>
+		</div>
+	<?php
+			}
+	}
+	?>
+	<br>
 					<div class="clearfix"></div>
-					<ul>
+					<!-- <ul>
 					  <li class="simpleCart_shelfItem">
 							<a class="cbp-vm-image" href="single.php">
 							<div class="inner_content clearfix">
@@ -306,7 +352,7 @@
 						</li>
 					</ul>
 					<a href="men2.php" class="link1">View next page</a>
-				</div>
+				</div> -->
 				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="js/classie.js" type="text/javascript"></script>
 			</div>

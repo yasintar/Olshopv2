@@ -188,150 +188,56 @@
                   </select> per page        
                </div>
        	   </div>
-					<div class="clearfix"></div>
-					<ul>
-					  <li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
+       	   <br><br>
+
+
+       	   <?php
+       	   require_once("dbcontroller.php");
+       	   $db_handle = new DBController();
+			$product_array = $db_handle->runQuery("SELECT * FROM barang where ktg_id = 'KTG03' ORDER BY brg_id ASC");
+	if (!empty($product_array)) { 
+		foreach($product_array as $key=>$value){
+	?>
+		<div class="product-item">
+			<form method="post" action="checkout.php?action=add&brg_id=<?php echo $product_array[$key]["brg_id"]; ?>">
+
+				<!-- <ul> -->
+					<!-- <li class="simpleCart_shelfItem"> -->
+					<div class="col-md-4 simpleCart_shelfItem">
+						<a class="cbp-vm-image" href="single.php">
 							<div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/yel.jpg" class="img-responsive" alt=""/>
+									<img src="images/<?php echo $product_array[$key]["brg_id"];?>.jpg">
 									<div class="product_container">
 									   <div class="cart-left">
-										 <p class="title">Parka Yellow</p>
+										 <div><strong><?php echo $product_array[$key]["brg_nama"]; ?></strong></div>
 									   </div>
-									   <div class="mount item_price price">Rp140.000</div>
+									   <div class="product-price"><?php echo $product_array[$key]["brg_harga"]; ?></div>
 									   <div class="clearfix"></div>
 								     </div>		
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								3 Months - 2 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							 <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/parkanavy.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Parka Navy</p>
-									   </div>
-									   <div class="price">Rp140.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								3 Months - 2 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/spic.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Spicy Print Sweater</p>
-									   </div>
-									   <div class="price">Rp80.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								5 - 10 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							   <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/jumps.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Shoulder Jumpsuit</p>
-									   </div>
-									   <div class="price">Rp90.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                   </div>
-							</a>
-							<div class="cbp-vm-details">
-								1 - 3 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-							  <div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/collardress.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Collar Dress Chambray</p>
-									   </div>
-									   <div class="price">Rp80.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-							</a>
-							<div class="cbp-vm-details">
-								1 - 3 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/skirt.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">Pleated Skirt Cream</p>
-									   </div>
-									   <div class="price">Rp80.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-		                    </a>
-							<div class="cbp-vm-details">
-								3 - 5 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-						<li class="simpleCart_shelfItem">
-							<a class="cbp-vm-image" href="single.php">
-								<div class="inner_content clearfix">
-								<div class="product_image">
-									<img src="images/3per4n.jpg" class="img-responsive" alt=""/>
-									<div class="product_container">
-									   <div class="cart-left">
-										 <p class="title">3 Per 4 Raglan T-Shirt</p>
-									   </div>
-									   <div class="price">Rp80.000</div>
-									   <div class="clearfix"></div>
-								     </div>		
-								  </div>
-			                     </div>
-							</a>
-							<div class="cbp-vm-details">
-								5 - 9 Years
-							</div>
-							<a class="button item_add cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
-						</li>
-					</ul>
-				</div>
+								</div>
+			                </div>
+		                </a>
+						<div class="cbp-vm-details">
+							Kids
+						</div>
+						<div>
+							<input type="text" name="quantity" value="1" size="2" />
+							<input type="submit" value="Add to cart" class="btnAddAction button item_add cbp-vm-icon cbp-vm-add" />
+						</div>
+						</div>
+					<!-- </li>
+				</ul> -->
+			</form>
+		</div>
+	<?php
+			}
+	}
+	?>
+
+
+					<div class="clearfix"></div>
+					
 				<script src="js/cbpViewModeSwitch.js" type="text/javascript"></script>
                 <script src="js/classie.js" type="text/javascript"></script>
 			</div>

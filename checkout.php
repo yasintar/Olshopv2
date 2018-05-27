@@ -1,3 +1,49 @@
+<?php
+	session_start();
+	require_once("dbcontroller.php");
+	$db_handle = new DBController();
+	if(!empty($_GET["action"])) {
+	switch($_GET["action"]) {
+		case "add":
+			if(!empty($_POST["quantity"])) {
+				$productByCode = $db_handle->runQuery("SELECT * FROM barang WHERE brg_id ='" . $_GET["brg_id"] . "'");
+				$itemArray = array($productByCode[0]["brg_id"]=>array('brg_nama'=>$productByCode[0]["brg_nama"], 'brg_id'=>$productByCode[0]["brg_id"], 'quantity'=>$_POST["quantity"], 'brg_harga'=>$productByCode[0]["brg_harga"]));
+				
+				if(!empty($_SESSION["cart_item"])) {
+					if(in_array($productByCode[0]["brg_id"],array_keys($_SESSION["cart_item"]))) {
+						foreach($_SESSION["cart_item"] as $k => $v) {
+								if($productByCode[0]["brg_id"] == $k) {
+									if(empty($_SESSION["cart_item"][$k]["quantity"])) {
+										$_SESSION["cart_item"][$k]["quantity"] = 0;
+									}
+									$_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
+								}
+						}
+					} else {
+						$_SESSION["cart_item"] = array_merge($_SESSION["cart_item"],$itemArray);
+					}
+				} else {
+					$_SESSION["cart_item"] = $itemArray;
+				}
+			}
+		break;
+		case "remove":
+			if(!empty($_SESSION["cart_item"])) {
+				foreach($_SESSION["cart_item"] as $k => $v) {
+						if($_GET["brg_id"] == $k)
+							unset($_SESSION["cart_item"][$k]);				
+						if(empty($_SESSION["cart_item"]))
+							unset($_SESSION["cart_item"]);
+				}
+			}
+		break;
+		case "empty":
+			unset($_SESSION["cart_item"]);
+		break;	
+	}
+	}
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -12,6 +58,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -81,73 +128,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		  </div>
 		</div>
     </div>
+
     <div class="main">
 	   <div class="container">
-		  <div class="check_box">	 
-		<div class="col-md-9 cart-items">
-			 <h1>My Shopping Bag (2)</h1>
-				<script>$(document).ready(function(c) {
-					$('.close1').on('click', function(c){
-						$('.cart-header').fadeOut('slow', function(c){
-							$('.cart-header').remove();
-						});
-						});	  
-					});
-			   </script>
+		<div class="check_box">	 
+		<div class="row">
+
+		<div class="col-md-9 col-lg-9 cart-items">
+			 <h1>My Shopping Bag  <a id="btnEmpty" href="checkout.php?action=empty">Empty Cart</a></h1>
+			 <?php
+				if(isset($_SESSION["cart_item"])){
+				    $item_total = 0;
+			?>
+
+			   
+		<?php 
+			foreach ($_SESSION["cart_item"] as $item){
+		?>
 			 <div class="cart-header">
-				 <div class="close1"> </div>
+				 <div class="close1"><a href="checkout.php?action=remove&brg_id=<?php echo $item["brg_id"]; ?>" class="btnRemoveAction">Remove</a> 
+				 </div>
 				 <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="images/pic1.jpg" class="img-responsive" alt="">
+						<div class="cart-item poto">
+							 <img src="images/<?php echo $item["brg_id"];?>.jpg">
 						</div>
 					   <div class="cart-item-info">
-						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
+						<h3><strong><?php echo $item["brg_nama"]; ?></strong><span><?php echo $item["brg_id"]; ?></span></h3>
 						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
+							<li>Qty: <?php echo $item["quantity"]; ?></li>
 						</ul>
 						<div class="delivery">
-							 <p>Service Charges : Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
+							 <p><?php echo "Rp ".$item["brg_harga"]; ?></p>
 							 <div class="clearfix"></div>
 				        </div>	
 					   </div>
-					   <div class="clearfix"></div>
-											
+					   <div class="clearfix"></div>			
 				  </div>
+				  <?php
+					        $item_total += ($item["brg_harga"]*$item["quantity"]);
+							}
+							?>
+				  <p><strong>Total:</strong> <?php echo "Rp ".$item_total; ?></p>
 			 </div>
-			 <script>$(document).ready(function(c) {
-					$('.close2').on('click', function(c){
-							$('.cart-header2').fadeOut('slow', function(c){
-						$('.cart-header2').remove();
-					});
-					});	  
-					});
-			 </script>
-			 <div class="cart-header2">
-				 <div class="close2"> </div>
-				  <div class="cart-sec simpleCart_shelfItem">
-						<div class="cart-item cyc">
-							 <img src="images/pic2.jpg" class="img-responsive" alt="">
-						</div>
-					   <div class="cart-item-info">
-						<h3><a href="#">Mountain Hopper(XS R034)</a><span>Model No: 3578</span></h3>
-						<ul class="qty">
-							<li><p>Size : 5</p></li>
-							<li><p>Qty : 1</p></li>
-						</ul>
-							 <div class="delivery">
-							 <p>Service Charges : Rs.100.00</p>
-							 <span>Delivered in 2-3 bussiness days</span>
-							 <div class="clearfix"></div>
-				        </div>	
-					   </div>
-					   <div class="clearfix"></div>
-											
-				  </div>
-			  </div>		
-		 </div>
-		 <div class="col-md-3 cart-total">
+		<?php
+			}
+		?>
+
+		</div>		
+
+		 <div class="col-md-3 col-lg-3 cart-total">
 			 <a class="continue" href="#">Sudah pernah belanja?<br>Klik Di sini </a>
 			 <div class="price-details">
 				 <h3>Price Details</h3>
@@ -181,12 +210,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Fix</label>
 			</a>
 			<a class="order" href="register.php">Lanjutkan</a>
-			 
-			</div>
-			<div class="clearfix"></div>
-	 </div>
+
+		   </div>
+		   <div class="clearfix"></div>
+	 	  </div>
+	 	  </div>
 	     </div>
 	    </div>
+
+
 		<div class="container">
 			<div class="brands">
 				<ul class="brand_icons">

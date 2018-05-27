@@ -91,20 +91,34 @@
 						 <span>Email Address<label>*</label></span>
 						 <input type="text"> 
 					 </div>
+					 <div>
+						<span>No Telepon<label>*</label></span>
+						<input type="text"> 
+					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
 						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newest Collection</label>
 					   </a>
 					 </div>
 				     <div class="register-bottom-grid">
-						    <h3>LOGIN INFORMATION</h3>
+						    <h3>ORDER INFORMATION</h3>
 							 <div>
-								<span>Password<label>*</label></span>
+								<span>Nama Barang<label>*</label></span>
 								<input type="text">
 							 </div>
 							 <div>
-								<span>Confirm Password<label>*</label></span>
+								<span>Jumlah Barang<label>*</label></span>
 								<input type="text">
+							 </div>
+							 <div>
+								<span>Pembayaran<label>*</label></span>
+								<form action="">
+									<select name="bayar">
+										<option value="bri">BRI</option>
+										<option value="bni">BNI</option>
+										<option value="mandiri">Mandiri</option>
+										<option value="bca">BCA</option>
+									</select>
 							 </div>
 					 </div>
 				</form>

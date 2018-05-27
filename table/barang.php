@@ -92,24 +92,24 @@
 					<div class="menu_box">
 				   	  	<h3 class="menu_head">Query</h3>
 				   	     <ul class="nav">
-					   	  	<li class="nav-item active"><a href="view.php">View</a></li>
-					   	  	<li><a href="function.php">Function</a></li>
-					   	  	<li><a href="trigger.php">Trigger</a></li>
-					   	  	<li><a href="procedure.php">Procedure</a></li>
-					   	  	<li><a href="join.php">Join</a></li>
-					   	  	<li><a href="cursor.php">Cursor</a></li>
+					   	  	<li class="nav-item active"><a href="../query/view.php">View</a></li>
+					   	  	<li><a href="../query/function.php">Function</a></li>
+					   	  	<li><a href="../query/trigger.php">Trigger</a></li>
+					   	  	<li><a href="../query/procedure.php">Procedure</a></li>
+					   	  	<li><a href="../query/join.php">Join</a></li>
+					   	  	<li><a href="../query/cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
 			   	    <br>
 			   	    <div class="menu_box">
 				   	  	<h3 class="menu_head">Table</h3>
 				   	     <ul class="nav">
-					   	  	<li><a href="../table/barang.php">Barang</a></li>
-					   	  	<li><a href="../table/byr_ktg.php">Bayar</a></li>
-					   	  	<li><a href="../table/detail.php">Detail Order</a></li>
-					   	  	<li><a href="../table/byr_ktg.php">Kategori</a></li>
-					   	  	<li><a href="../table/order.php">Order Barang</a></li>
-					   	  	<li><a href="../table/pembeli.php">Pembeli</a></li>
+					   	  	<li><a href="barang.php">Barang</a></li>
+					   	  	<li><a href="byr_ktg.php">Bayar</a></li>
+					   	  	<li><a href="detail.php">Detail Order</a></li>
+					   	  	<li><a href="byr_ktg.php">Kategori</a></li>
+					   	  	<li><a href="order.php">Order Barang</a></li>
+					   	  	<li><a href="pembeli.php">Pembeli</a></li>
 					   	 </ul>
 			   	    </div>
 			   	 </div>
@@ -125,7 +125,7 @@
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Function
+                       View
                     </li>
                 </ul>
                 <ul class="previous">
@@ -134,79 +134,33 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			    <div class="col-md-6 login-right">
-			  	 <h3>FUNCTION (total harga pembeli)</h3>
-			  	 <form method="post" action="function.php">
-			  	 	<div>
-						<span>Nama Pembeli<label>*</label></span>
-						<input type="text" name="namapbl"> 
-					</div>
-				  	<input type="submit" value="Find" name="submit">
-			  	 </form>
+			    <div class="col-md-6 login-left">
+			  	 <h3>VIEW (barang belum terjual)</h3>
 				 <?php
 				 	include ('../config.php');
 
-					if(isset($_POST['submit'])) {
-				  		if(isset($_POST['namapbl'])){
-							$user = $_POST['namapbl'];
+					$sql = "SELECT * FROM brg_notsale";
+					$result = mysqli_query($conn, $sql);
 
-							$sql = "SELECT total_harga('$user') as  total";
-							$result = mysqli_query($conn, $sql);
-
-							if($result->num_rows != 0){
-								while ($rows = $result->fetch_object()) {
-									$id = $rows->total;
-									echo "
-										<div align='center'>
-											<h1>$id</h1><br>
-										</div>
+					if($result->num_rows != 0){
+						while ($rows = $result->fetch_object()) {
+							$id = $rows->brg_id;
+							$ktg = $rows->ktg_id;
+							$nama = $rows->brg_nama;
+							$harga = $rows->brg_harga;
+								echo "
+									<div align='center'>
+										<h4>$nama</h4>
+										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
+									</div>
 									";
-								}
-							}else{
-								echo "<div align='center'>
-										<h1>Tidak ada pembeli tersebut<h1>
-									</div>";
-							}
 						}
+					}else{
+						echo "tidak ada komentar";
 					}
+				 	
 				 ?>
-			    </div>
-
-			   <div class="col-md-6 login-right">
-				<h3>FUNCTION (barang terjual)</h3>
-			  	 <form method="post" action="function.php">
-			  	 	<div>
-						<span>Nama Barang<label>*</label></span>
-						<input type="text" name="namabrg"> 
-					</div>
-				  	<input type="submit" value="Find" name="submitbrg">
-			  	 </form>
-				 <?php
-				 	include ('../config.php');
-
-					if(isset($_POST['submitbrg'])) {
-				  		if(isset($_POST['namabrg'])){
-							$brg = $_POST['namabrg'];
-
-							$sql = "SELECT DISTINCT penjualan('$brg') AS jml_terjual;";
-							$result = mysqli_query($conn, $sql);
-
-							if($result->num_rows != 0){
-								while ($rows = $result->fetch_object()) {
-									$id = $rows->jml_terjual;
-									echo "
-										<div align='center'>
-											<h1>$id</h1><br>
-										</div>
-									";
-								}
-							}else{
-								echo "tidak ada komentar";
-							}
-						}
-					}
-				 ?>
-			   </div>	
+			    </div>	
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>

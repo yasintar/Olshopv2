@@ -101,6 +101,18 @@
 					   	  	<li><a href="cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
+			   	    <br>
+			   	    <div class="menu_box">
+				   	  	<h3 class="menu_head">Table</h3>
+				   	     <ul class="nav">
+					   	  	<li><a href="../table/barang.php">Barang</a></li>
+					   	  	<li><a href="../table/byr_ktg.php">Bayar</a></li>
+					   	  	<li><a href="../table/detail.php">Detail Order</a></li>
+					   	  	<li><a href="../table/byr_ktg.php">Kategori</a></li>
+					   	  	<li><a href="../table/order.php">Order Barang</a></li>
+					   	  	<li><a href="../table/pembeli.php">Pembeli</a></li>
+					   	 </ul>
+			   	    </div>
 			   	 </div>
 			  <div class="col-md-9">
 			    <div class="dreamcrub">

@@ -101,6 +101,19 @@
 					   	  	<li><a href="query/cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
+			   	    <br>
+			   	    <div class="menu_box">
+				   	  	<h3 class="menu_head">Table</h3>
+				   	     <ul class="nav">
+					   	  	<li><a href="table/barang.php">Barang</a></li>
+					   	  	<li><a href="table/byr_ktg.php">Bayar</a></li>
+					   	  	<li><a href="table/detail.php">Detail Order</a></li>
+					   	  	<li><a href="table/byr_ktg.php">Kategori</a></li>
+					   	  	<li><a href="table/order.php">Order Barang</a></li>
+					   	  	<li><a href="table/pembeli.php">Pembeli</a></li>
+					   	 </ul>
+			   	    </div>
+
 			   	 </div>
 			  <div class="col-md-9">
 			    <div class="dreamcrub">
@@ -204,16 +217,7 @@
 			   	</div>
 
 			   	<div class="row">
-			   		<!-- <div class="col-md-6 login-left">
-			  	 <h3>NEW CUSTOMERS</h3>
-				 <p>By creating an account here, you will get an ID customer. You can use it to login easier, move through the checkout process faster, store multiple shipping addresses, view and track your orders.</p>
-				 <a class="acount-btn" href="register.php">Create an Account</a>
-			   </div>
-			   <div class="col-md-6 login-right">
-			  	<h3>REGISTERED CUSTOMERS</h3>
-				
-			   </div> -->	
-			   <div class="clearfix"> </div>
+			  		<div class="clearfix"> </div>
 			   	</div>
 			 </div>
 		   </div>

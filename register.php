@@ -80,11 +80,11 @@
 				 <div class="register-top-grid">
 					<h3>PERSONAL INFORMATION</h3>
 					 <div>
-						<span>First Name<label>*</label></span>
+						<span>Nama<label>*</label></span>
 						<input type="text"> 
 					 </div>
 					 <div>
-						<span>Last Name<label>*</label></span>
+						<span>Alamat<label>*</label></span>
 						<input type="text"> 
 					 </div>
 					 <div>
@@ -97,29 +97,8 @@
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Sign Up for Newest Collection</label>
+						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Daftar untuk lanjut belanja</label>
 					   </a>
-					 </div>
-				     <div class="register-bottom-grid">
-						    <h3>ORDER INFORMATION</h3>
-							 <div>
-								<span>Nama Barang<label>*</label></span>
-								<input type="text">
-							 </div>
-							 <div>
-								<span>Jumlah Barang<label>*</label></span>
-								<input type="text">
-							 </div>
-							 <div>
-								<span>Pembayaran<label>*</label></span>
-								<form action="">
-									<select name="bayar">
-										<option value="bri">BRI</option>
-										<option value="bni">BNI</option>
-										<option value="mandiri">Mandiri</option>
-										<option value="bca">BCA</option>
-									</select>
-							 </div>
 					 </div>
 				</form>
 				<div class="clearfix"> </div>
@@ -128,7 +107,7 @@
 					   <input type="submit" value="submit">
 					   <br>
 					   <br>
-					   Please check email to know your ID customer, thank you.
+					   Please check email to check your ID customer, thank you.
 					   <div class="clearfix"> </div>
 				   </form>
 				</div>

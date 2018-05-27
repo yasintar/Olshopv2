@@ -148,32 +148,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			  </div>		
 		 </div>
 		 <div class="col-md-3 cart-total">
-			 <a class="continue" href="#">Continue to basket</a>
+			 <a class="continue" href="#">Sudah pernah belanja?<br>Klik Di sini </a>
 			 <div class="price-details">
 				 <h3>Price Details</h3>
 				 <span>Total</span>
-				 <span class="total1">6200.00</span>
+				 <span class="total1">0000.00</span>
 				 <span>Discount</span>
 				 <span class="total1">---</span>
 				 <span>Delivery Charges</span>
-				 <span class="total1">150.00</span>
+				 <span class="total1">000.00</span>
 				 <div class="clearfix"></div>				 
 			 </div>	
 			 <ul class="total_price">
 			   <li class="last_price"> <h4>TOTAL</h4></li>	
-			   <li class="last_price"><span>6350.00</span></li>
+			   <li class="last_price"><span>0000.00</span></li>
 			   <div class="clearfix"> </div>
 			 </ul>
-			
+			<div class="total-item">
+				 <h3>Choose a Payment</h3>
+				 <form action="submit">
+					<select name="bayar">
+						<option value="bri">BRI</option>
+						<option value="bni">BNI</option>
+						<option value="mandiri">Mandiri</option>
+						<option value="bca">BCA</option>
+					</select>
+				</form>
+			 </div>
 			 
 			 <div class="clearfix"></div>
-			 <a class="order" href="#">Place Order</a>
-			 <div class="total-item">
-				 <h3>OPTIONS</h3>
-				 <h4>COUPONS</h4>
-				 <a class="cpns" href="#">Apply Coupons</a>
-				 <p><a href="login.php">Log In</a> to use accounts - linked coupons</p>
-			 </div>
+		   <a class="news-letter" href="#">
+				 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i>Fix</label>
+			</a>
+			<a class="order" href="register.php">Lanjutkan</a>
+			 
 			</div>
 			<div class="clearfix"></div>
 	 </div>

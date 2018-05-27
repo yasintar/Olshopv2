@@ -53,10 +53,11 @@
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="../index.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
+				<a href="../indexadmin.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
+			 	<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li><br><br>
 				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
@@ -69,8 +70,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><form action="../logout.php" method="post"><button type="submit" name="logout">Log Out</button></form></li>
-				<li class="wish"><a href="../checkout.php">Wish List</a></li>
+				<li align="center"><a href="../checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <ul class="quick_access">
@@ -130,7 +130,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.php">Back to Previous Page</a></li>
+                	<li><a href="indexadmin.php">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
@@ -156,7 +156,31 @@
 
 					}
 				 ?>
-			   <h3>Tabel Order Barang</h3>
+				</div>
+				 <div class="col-md-6 login-right">
+			  	 <h3>PROCEDURE (Diskon 5% periode belanja 10-16 Mei 2018 khusus pelanggan)</h3>
+			  	 <h5>Klik untuk meng-apply pajak</h5>
+			  	 <form method="post" action="procedure.php">
+					<input type="submit" name="calldiskmei" value="CALL">
+				 </form>
+				 <?php
+				 	if(isset($_POST["calldiskmei"])){
+
+						include ("../config.php");
+					 
+						$sql = "CALL diskon()";
+					 
+						mysqli_query($conn, $sql) or die("Error, query failed!");
+						#echo "berhasil";
+						echo "<script>
+				             alert('Diskon berhasil diberikan'); 
+				    		</script>";
+
+					}
+				 ?>
+			    </div>
+<br>
+			   <h3 align="center">Tabel Order Barang</h3>
 				<div class="dwdcuy">
 				<table align="center">
 					<tr>
@@ -199,33 +223,7 @@
 				</table>
 				</div>
 			   </div>
-			    <div class="col-md-6 login-left">
-			  	 <h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
-
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			    </div>
+			   
 
 			   	
 			   <div class="clearfix"> </div>

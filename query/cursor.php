@@ -53,10 +53,11 @@
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="../index.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
+				<a href="../indexadmin.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
+			 	<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li><br><br>
 				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
@@ -69,8 +70,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><form action="../logout.php" method="post"><button type="submit" name="logout">Log Out</button></form></li>
-				<li class="wish"><a href="../checkout.php">Wish List</a></li>
+				<li align="center"><a href="../checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <ul class="quick_access">
@@ -130,7 +130,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.php">Back to Previous Page</a></li>
+                	<li><a href="../indexadmin.php">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
@@ -160,21 +160,21 @@
 			   </div>
 			    <div class="col-md-6 login-right">
 				 <h3>CURSOR (Pajak 7500 bila bukan melalui BRI)</h3>
-				<h5>Klik untuk meng-apply discount (setelah diberi pajak)</h5>
+				<h5>Klik untuk meng-apply biaya tambahan (setelah diberi pajak)</h5>
 				<form method="post" action="cursor.php">
-					<input type="submit" name="calldisc" value="CALL">
+					<input type="submit" name="eksplis" value="CALL">
 				</form>
 				 <?php
-				 	if(isset($_POST["calldisc"])){
+				 	if(isset($_POST["eksplis"])){
 
 						include ("../config.php");
 					 
-						$sql = "CALL disc_order()";
+						$sql = "CALL eksplisit()";
 					 
 						mysqli_query($conn, $sql) or die("Error, query failed!");
 						#echo "berhasil";
 						echo "<script>
-				             alert('Discount berhasil diberikan'); 
+				             alert('Biaya pajak berhasil ditambahkan'); 
 				    		</script>";
 
 					}

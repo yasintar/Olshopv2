@@ -53,10 +53,11 @@
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="../index.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
+				<a href="../indexadmin.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
+			 	<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li><br><br>
 				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
@@ -69,8 +70,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><form action="../logout.php" method="post"><button type="submit" name="logout">Log Out</button></form></li>
-				<li class="wish"><a href="../checkout.php">Wish List</a></li>
+				<li align="center"><a href="../checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <ul class="quick_access">
@@ -130,7 +130,7 @@
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="index.php">Back to Previous Page</a></li>
+                	<li><a href="../indexadmin.php">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
@@ -139,7 +139,7 @@
 				 <div class="dwdcuy">
 				<table align="center">
 					<tr>
-						<th>ID_Pembeli</th>
+						<th>ID Pembeli</th>
 						<th>Nama</th>
 						<th>Alamat</th>
 						<th>Telepon</th>

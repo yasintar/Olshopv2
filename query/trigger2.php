@@ -22,6 +22,7 @@
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -125,90 +126,116 @@
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Function
+                       Trigger
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="indexadmin.php">Back to Previous Page</a></li>
+                	<li><a href="../indexadmin.php">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			    <div class="col-md-6 login-right">
-			  	 <h3>FUNCTION (total harga pembeli)</h3>
-			  	 <form method="post" action="function.php">
-			  	 	<div>
-						<span>Nama Pembeli<label>*</label></span>
-						<input type="text" name="namapbl"> 
-					</div>
-				  	<input type="submit" value="Find" name="submit">
-			  	 </form>
-				 <?php
-				 	include ('../config.php');
+			   	<div class="row login-right">
+			   		<h3>TRIGGER (hapus record di tabel order barang)</h3>
+						<form method="post" action="trigger.php">
+					  	 	<div>
+								<span>ID Order<label>*</label></span>
+								<input type="text" name="idorder"> 
+							</div>
+						  	<input type="submit" value="Delete" name="subdelete">
+					  	 </form>
+					  	 <?php
+					  	 	include ('../config.php');
 
-					if(isset($_POST['submit'])) {
-				  		if(isset($_POST['namapbl'])){
-							$user = $_POST['namapbl'];
+							if(isset($_POST['subdelete'])) {
+						  		if(isset($_POST['idorder'])){
+									$idorder = $_POST['idorder'];
 
-							$sql = "SELECT total_harga('$user') as  total";
-							$result = mysqli_query($conn, $sql);
+									$sql = "DELETE FROM order_brg WHERE od_id = '$idorder'";
 
-							if($result->num_rows != 0){
-								while ($rows = $result->fetch_object()) {
-									$id = $rows->total;
-									echo "
-										<div align='center'>
-											<h1>$id</h1><br>
-										</div>
-									";
+									mysqli_query($conn, $sql) or die("Error, query failed!");
+									
+									echo "<script>
+							             alert('Delete Successfully'); 
+							    		</script>";
 								}
-							}else{
-								echo "<div align='center'>
-										<h1>Tidak ada pembeli tersebut<h1>
-									</div>";
 							}
-						}
-					}
-				 ?>
-			    </div>
+					  	 ?>	
+				</div>
+				<div class="row">
+					<div class="col-md-6 login-right">
+					  	 <h3>Tabel Order Barang</h3>
+					  	 <div class="dwdcuy">
+					  	 <table align="center">
+						<tr>
+							<th>Order ID</th>
+							<th>ID Bayar</th>
+							<th>ID Pembeli</th>
+							<th>Jumlah Order</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM order_brg order by od_id";
+							$res = mysqli_query($conn, $sql);
 
-			   <div class="col-md-6 login-right">
-				<h3>FUNCTION (barang terjual)</h3>
-			  	 <form method="post" action="function.php">
-			  	 	<div>
-						<span>Nama Barang<label>*</label></span>
-						<input type="text" name="namabrg"> 
+							//if(mysqli_num_rows($sql) > 0){
+								$no = 1;
+								while($data = $res->fetch_object()){
+									$odid = $data->od_id;
+									$byrid = $data->byr_id;
+									$pblid = $data->pbl_id;
+									$jlh = $data->od_jumlah;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$odid.'</td>
+										<td align="center">'.$byrid.'</td>
+										<td align="center">'.$pblid.'</td>
+										<td align="center">'.$jlh.'</td>
+									</tr>
+									';
+									$no++;
+								}				
+						?>
+					</table>
 					</div>
-				  	<input type="submit" value="Find" name="submitbrg">
-			  	 </form>
-				 <?php
-				 	include ('../config.php');
+					   </div>
+					   <div class="col-md-6 login-right">
+					  	 <h3>Tabel Log</h3>
+					  	 <div class="dwdcuy">
+						 <table align="center">
+						<tr>
+							<th>Order ID</th>
+							<th>ID Barang</th>
+							<th>Jumlah Order</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM detail_order order by od_id";
+							$res = mysqli_query($conn, $sql);
 
-					if(isset($_POST['submitbrg'])) {
-				  		if(isset($_POST['namabrg'])){
-							$brg = $_POST['namabrg'];
-
-							$sql = "SELECT DISTINCT penjualan('$brg') AS jml_terjual;";
-							$result = mysqli_query($conn, $sql);
-
-							if($result->num_rows != 0){
-								while ($rows = $result->fetch_object()) {
-									$id = $rows->jml_terjual;
-									echo "
-										<div align='center'>
-											<h1>$id</h1><br>
-										</div>
-									";
-								}
-							}else{
-								echo "tidak ada komentar";
-							}
-						}
-					}
-				 ?>
-			   </div>	
-			   <div class="clearfix"> </div>
+							//if(mysqli_num_rows($sql) > 0){
+								//$no = 1;
+								while($data2 = $res->fetch_object()){
+									$odid2 = $data2->od_id;
+									$brgid = $data2->brg_id;
+									$jlh2 = $data2->jumlah;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$odid2.'</td>
+										<td align="center">'.$brgid.'</td>
+										<td align="center">'.$jlh2.'</td>
+									</tr>
+									';
+									//$no++;
+								}				
+						?>
+					</table>
+					</div>
+					    </div>
+					    <div class="clearfix"> </div>		 	
+				</div>
 			 </div>
+			    
 		   </div>
 		  </div>
 	     </div>

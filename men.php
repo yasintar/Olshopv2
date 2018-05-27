@@ -59,8 +59,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><a href="login.php">Login</a></li>
-				<li class="wish"><a href="checkout.php">Wish List</a></li>
+				<li align="center"><a href="checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <div class="cart_bg">

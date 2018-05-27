@@ -45,11 +45,13 @@
 				 </div>
 			   <div class="header_right">
 				 <ul class="social">
+				 	<li align="center"><a href="login.php" class="banner_btn">Login (admin only)</a></li><br><br>
 					<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 					<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 					<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
 					<li><a href=""><i class="pin"> </i> </a></li>
 					<li><a href="https://www.instagram.com/hmtc_its" target="_blank" rel="nofollow"><i class="instagram"> </i> </a></li>
+
 				 </ul>
 				<div class="clearfix"></div>
 	          </div>
@@ -58,8 +60,7 @@
 			 <div class="banner_wrap">
 				<div class="bannertop_box">
 	   		 		<ul class="login">
-	   		 			<li class="login_text"><a href="login.php">login</a></li>
-	   		 			<li class="wish"><a href="checkout.php">Wish List</a></li>
+	   		 			<li align="center"><a href="checkout.php">Wish List</a></li>
 	   		 			<div class='clearfix'></div>
 	   		 		</ul>
 	   		 		<div class="cart_bg">
@@ -82,13 +83,11 @@
 		  			</div>
 		  			<div class="welcome_box">
 		  				<h3>Welcome to </br>R O N A</h3> <br>
-		  				<a href="register.php"><img src="images/buynow.png"></a>
 		  			</div>
 	   		 	</div>
 	   		 	<div class="banner_right">
 	   		 		<h1>R O N A <br>c l o t h i n g</h1>
 	   		 		<p>we lead the way to be fashionista!</p>
-	   		 		<a href="register.php" class="banner_btn">One Step Closer</a>
 	   		 	</div>
 	   		 	<div class='clearfix'></div>
 		    </div>
@@ -201,7 +200,7 @@
 			                 </a>
 					   </div>
 					   <div class="clearfix"></div>
-					   <a href="#" class="link1">View all products for women</a>
+					   <a href="women.php" class="link1">View all products for women</a>
 				  </div>
 				  <h3 class="m_2">M E N</h3>
 				   <div class="content_grid">
@@ -257,7 +256,7 @@
 			                 </a>
 					    </div>
 					    <div class="clearfix"></div>
-					    <a href="#" class="link1">View all products for men</a>
+					    <a href="men.php" class="link1">View all products for men</a>
 				    </div>
 				    <h3 class="m_2">K I D S</h3>
 				   <div class="content_grid">
@@ -313,7 +312,7 @@
 			                 </a>
 					   </div>
 					   <div class="clearfix"></div>
-					   <a href="#" class="link1">View all products for kids</a>
+					   <a href="kids.php" class="link1">View all products for kids</a>
 				    </div>
 				  </div>
 				</div>

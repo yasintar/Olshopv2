@@ -53,10 +53,11 @@
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="index.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
+				<a href="#"><h6>Online Shop</h6><h2> RO..NA </h2></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">
+			 	<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li><br><br>
 				<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 				<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 				<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
@@ -69,8 +70,7 @@
 		 </div>  
 		 <div class="about_box">
 			<ul class="login">
-				<li class="login_text"><form action="logout.php" method="post"><button type="submit" name="logout">Log Out</button></form></li>
-				<li class="wish"><a href="checkout.php">Wish List</a></li>
+				<li align="center"><a href="checkout.php">Wish List</a></li>
 				<div class='clearfix'></div>
 		    </ul>
 		    <ul class="quick_access">
@@ -143,17 +143,17 @@
 			   			<div class="row">
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Barang belum terjual</a></div>
+							      <div class="panel-body oldata"><a href="query/view.php">Barang belum terjual</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Barang terjual</a></div>
+							      <div class="panel-body oldata"><a href="query/view.php">Barang terjual</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Total harga pembeli tertentu</a></div>
+							      <div class="panel-body oldata"><a href="query/function.php">Total harga pembeli tertentu</a></div>
 							    </div>
 			   				</div>
 			   			</div>
@@ -161,17 +161,17 @@
 					    <div class="row">
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Jumlah barang terjual tertentu</a></div>
+							      <div class="panel-body oldata"><a href="query/function.php">Jumlah barang terjual tertentu</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Hapus record Order (Detail Order <em>following</em>)</a></div>
+							      <div class="panel-body oldata"><a href="query/trigger.php">Hapus record Order (Detail Order <em>following</em>)</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">
+							      <div class="panel-body oldata"><a href="query/trigger2.php">
 							      Log update data pembeli</a></div>
 							    </div>
 			   				</div>
@@ -180,17 +180,17 @@
 					    <div class="row">
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Pajak 10% pada setiap transaksi</a></div>
+							      <div class="panel-body oldata"><a href="query/procedure.php">Pajak 10% pada setiap transaksi</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Diskon 5% untuk pelanggan pada promo ramadhan</a></div>
+							      <div class="panel-body oldata"><a href="query/procedure.php">Diskon 5% untuk pelanggan pada promo ramadhan</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Barang terjual (pelanggan)</a></div>
+							      <div class="panel-body oldata"><a href="query/join.php">Barang terjual (pelanggan)</a></div>
 							    </div>
 			   				</div>
 			   			</div>
@@ -198,17 +198,17 @@
 					    <div class="row">
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Top 5 barang terjual (pelanggan)</a></div>
+							      <div class="panel-body oldata"><a href="query/join.php">Top 5 barang terjual (pelanggan)</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Diskon 10% untuk pelanggan dengan total belanja > 1 juta</a></div>
+							      <div class="panel-body oldata"><a href="query/cursor.php">Diskon 10% untuk pelanggan dengan total belanja > 1 juta</a></div>
 							    </div>
 			   				</div>
 			   				<div class="col-md-4">
 			   					<div class="panel panel-default">
-							      <div class="panel-body oldata"><a href="">Pajak 7500 untuk pembeli yang membayar selain melalui BRI</a></div>
+							      <div class="panel-body oldata"><a href="query/cursor.php">Pajak 7500 untuk pembeli yang membayar selain melalui BRI</a></div>
 							    </div>
 			   				</div>
 			   			</div>

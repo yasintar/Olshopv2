@@ -117,11 +117,11 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="../indexadmin.php" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="../indexadmin.php" title="Go to Home Page">Admin</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        &nbsp;Admin
+                        &nbsp;Query
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">

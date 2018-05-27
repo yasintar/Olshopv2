@@ -22,6 +22,7 @@
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -117,15 +118,15 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="../indexadmin.php" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="../indexadmin.php" title="Go to Home Page">Admin</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        &nbsp;Admin
+                        &nbsp;Table
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       View
+                       Barang
                     </li>
                 </ul>
                 <ul class="previous">
@@ -133,34 +134,46 @@
                 </ul>
                 <div class="clearfix"></div>
 			   </div>
-			   <div class="account_grid">
-			    <div class="col-md-6 login-left">
-			  	 <h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
-
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			    </div>	
+			   <div class="account_grid login-left">
+			  	 <h3 align="center">BARANG</h3>
+				 <div class="dwdcuy">
+				<table align="center">
+					<tr>
+						<th>ID_Barang</th>
+						<th>ID_Kategori</th>
+						<th>Nama_Barang</th>
+						<th>Harga</th>
+						<th>Stok</th>
+						<th>Keterangan</th>
+					</tr>
+					<?php
+						include('../config.php');
+						$sql = "SELECT * FROM barang";
+						$res = mysqli_query($conn, $sql);
+						//if(mysqli_num_rows($sql) > 0){
+						$no = 1;
+						while($data = $res->fetch_object()){
+							$brgid = $data->brg_id;
+							$ktgid = $data->ktg_id;
+							$nama = $data->brg_nama;
+							$harga = $data->brg_harga;
+							$stok = $data->brg_stok;
+							$ket = $data->brg_ket;
+							echo '
+								<tr bgcolor="#fff">
+									<td align="center">'.$brgid.'</td>
+									<td align="center">'.$ktgid.'</td>
+									<td align="center">'.$nama.'</td>
+									<td align="center">'.$harga.'</td>
+									<td align="center">'.$stok.'</td>
+									<td align="center">'.$ket.'</td>
+								</tr>
+							';
+							$no++;
+						}				
+					?>
+				</table>
+				</div>
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>

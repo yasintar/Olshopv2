@@ -11,3 +11,12 @@
 .dwdcuy table tr:nth-child(even){
   background-color: #f1f1f1;
 }
+
+.oldata{
+	text-align: center;
+	background-color: #ffe6ff;
+}
+.oldata a{
+	text-decoration: none;
+	color: #00aaff;
+}

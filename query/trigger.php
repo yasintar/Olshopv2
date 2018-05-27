@@ -97,7 +97,6 @@
 					   	  	<li><a href="trigger.php">Trigger</a></li>
 					   	  	<li><a href="procedure.php">Procedure</a></li>
 					   	  	<li><a href="join.php">Join</a></li>
-					   	  	<li><a href="index.php">Index</a></li>
 					   	  	<li><a href="cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
@@ -106,15 +105,15 @@
 			    <div class="dreamcrub">
 			   	 <ul class="breadcrumbs">
                     <li class="home">
-                       <a href="index.php" title="Go to Home Page">Home</a>&nbsp;
+                       <a href="../indexadmin.php" title="Go to Home Page">Home</a>&nbsp;
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        &nbsp;Account
+                        &nbsp;Admin
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Login
+                       Trigger
                     </li>
                 </ul>
                 <ul class="previous">

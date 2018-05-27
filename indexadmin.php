@@ -22,6 +22,7 @@
 <script src="js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -97,7 +98,6 @@
 					   	  	<li><a href="query/trigger.php">Trigger</a></li>
 					   	  	<li><a href="query/procedure.php">Procedure</a></li>
 					   	  	<li><a href="query/join.php">Join</a></li>
-					   	  	<li><a href="query/index.php">Index</a></li>
 					   	  	<li><a href="query/cursor.php">Cursor</a></li>
 					   	 </ul>
 			   	    </div>
@@ -110,80 +110,118 @@
                        <span>&gt;</span>
                     </li>
                     <li class="home">&nbsp;
-                        &nbsp;Account
+                        &nbsp;Login
                         <span>&gt;</span>&nbsp;
                     </li>
                     <li class="women">
-                       Login
+                       Admin Only
                     </li>
                 </ul>
-                <ul class="previous">
+                <!-- <ul class="previous">
                 	<li><a href="index.php">Back to Previous Page</a></li>
-                </ul>
+                </ul> -->
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			   <div class="col-md-6 login-left">
+			   	<div class="row">
+			   		<h3 align="center">OLAHAN DATA PENJUALAN</h3>
+			   		<br>
+			   		<div class="panel-group">
+			   			<div class="row">
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Barang belum terjual</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Barang terjual</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Total harga pembeli tertentu</a></div>
+							    </div>
+			   				</div>
+			   			</div>
+					    <br>
+					    <div class="row">
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Jumlah barang terjual tertentu</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Hapus record Order (Detail Order <em>following</em>)</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">
+							      Log update data pembeli</a></div>
+							    </div>
+			   				</div>
+			   			</div>
+					    <br>
+					    <div class="row">
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Pajak 10% pada setiap transaksi</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Diskon 5% untuk pelanggan pada promo ramadhan</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Barang terjual (pelanggan)</a></div>
+							    </div>
+			   				</div>
+			   			</div>
+					    <br>
+					    <div class="row">
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Top 5 barang terjual (pelanggan)</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Diskon 10% untuk pelanggan dengan total belanja > 1 juta</a></div>
+							    </div>
+			   				</div>
+			   				<div class="col-md-4">
+			   					<div class="panel panel-default">
+							      <div class="panel-body oldata"><a href="">Pajak 7500 untuk pembeli yang membayar selain melalui BRI</a></div>
+							    </div>
+			   				</div>
+			   			</div>
+					    <br>
+					</div>
+			   	</div>
+
+			   	<div class="row">
+			   		<!-- <div class="col-md-6 login-left">
 			  	 <h3>NEW CUSTOMERS</h3>
 				 <p>By creating an account here, you will get an ID customer. You can use it to login easier, move through the checkout process faster, store multiple shipping addresses, view and track your orders.</p>
 				 <a class="acount-btn" href="register.php">Create an Account</a>
 			   </div>
 			   <div class="col-md-6 login-right">
 			  	<h3>REGISTERED CUSTOMERS</h3>
-				<p>If you have an account here, please log in.</p>
-				<form method="post" action="val_access.php">
-				  <div>
-					<span>Name<label>*</label></span>
-					<input type="text" name="username"> 
-				  </div>
-				  <div>
-					<span>ID Cust<label>*</label></span>
-					<input type="password" name="idcust"> 
-				  </div>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
-				  <input type="submit" value="Login" name="submit">
-			    </form>
-			   </div>	
+				
+			   </div> -->	
 			   <div class="clearfix"> </div>
+			   	</div>
 			 </div>
 		   </div>
 		  </div>
 	     </div>
 	    </div>
 	    </div>
-		<div class="container">
-			<div class="brands">
-				<ul class="brand_icons">
-					<li><img src='images/icon1.png' class="img-responsive" alt=""/></li>
-					<li><img src='images/icon2.png' class="img-responsive" alt=""/></li>
-					<li><img src='images/icon3.png' class="img-responsive" alt=""/></li>
-					<li><img src='images/icon4.png' class="img-responsive" alt=""/></li>
-					<li class="last"><img src='images/icon5.png' class="img-responsive" alt=""/></li>
-				</ul>
-			</div>
-	    </div>
-	    <div class="container">
-	      <div class="instagram_top">
-	      	<div class="instagram text-center">
-				<h3><a href="index.php">More Collections</a></h3>
-			</div>
-	        <ul class="instagram_grid">
-			  <li><a class="popup-with-zoom-anim" href=""><img src="images/sandal.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href=""><img src="images/tape.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href=""><img src="images/pumps.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href=""><img src="images/loaf.jpg" class="img-responsive" alt=""/></a></li>
-				  <li><a class="popup-with-zoom-anim" href=""><img src="images/sneak.jpg" class="img-responsive" alt=""/></a></li>
-				  <li class="last_instagram"><a class="popup-with-zoom-anim" href=""><img src="images/wedges.jpg" class="img-responsive" alt=""/></a></li>
-				  <div class="clearfix"></div>
-			</ul>
-		  </div>
-	      <ul class="footer_social">			
-			<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow" title="RN TW"> <i class="tw"> </i> </a></li>
-			<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow" title="RN FB"> <i class="fb"> </i> </a></li>			
-			<li><a href="#"><i class="pin"> </i> </a></li>
-			<div class="clearfix"></div>
-		   </ul>
-	    </div>
+
         <div class="footer">
 		<div class="container">
 			<div class="footer-grid">

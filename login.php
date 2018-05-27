@@ -121,7 +121,7 @@
 					<input type="text" name="username"> 
 				  </div>
 				  <div>
-					<span>ID Cust<label>*</label></span>
+					<span>Password<label>*</label></span>
 					<input type="password" name="passw"> 
 				  </div>
 				  <a class="forgot" href="#">Forgot Your Password?</a>

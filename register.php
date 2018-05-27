@@ -153,6 +153,8 @@ if(isset($_SESSION["cart_item"])){
 				<?php
         $item_total += ($item["brg_harga"]*$item["quantity"]);
 		}
+
+		$_SESSION["itotal"] = $item_total;
 		?>
 
 <tr>
@@ -166,7 +168,7 @@ if(isset($_SESSION["cart_item"])){
 </div>
 		  	  <form method="post" action="reg.php"> 
 				 <div class="register-top-grid">
-
+				 	<?php $item_total; ?>
 					<h3>PERSONAL INFORMATION</h3>
 					<div>
 						<span>Order ID<label>*</label></span>
@@ -207,7 +209,7 @@ if(isset($_SESSION["cart_item"])){
 						<option value="mandiri">Mandiri</option>
 						<option value="bca">BCA</option>
 					</select>
-			 </div>
+			 <!-- </div> -->
 					<div class="register-but">
 				   <!-- <form> -->
 					   <input type="submit" value="submit" name="blj">

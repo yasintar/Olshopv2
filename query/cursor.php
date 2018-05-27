@@ -135,7 +135,8 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			   	<div class="col-md-6 login-right">
+			   	<div class="row">
+			   		<div class="col-md-6 login-right">
 				<h3>CURSOR (Discount 10% untuk pelanggan membeli > 1.000.000)</h3>
 				<h5>Klik untuk meng-apply discount (setelah diberi pajak)</h5>
 				<form method="post" action="cursor.php">
@@ -156,7 +157,33 @@
 
 					}
 				 ?>
-			   <h3>Tabel Order Barang</h3>
+			   </div>
+			    <div class="col-md-6 login-right">
+				 <h3>CURSOR (Pajak 7500 bila bukan melalui BRI)</h3>
+				<h5>Klik untuk meng-apply discount (setelah diberi pajak)</h5>
+				<form method="post" action="cursor.php">
+					<input type="submit" name="calldisc" value="CALL">
+				</form>
+				 <?php
+				 	if(isset($_POST["calldisc"])){
+
+						include ("../config.php");
+					 
+						$sql = "CALL disc_order()";
+					 
+						mysqli_query($conn, $sql) or die("Error, query failed!");
+						#echo "berhasil";
+						echo "<script>
+				             alert('Discount berhasil diberikan'); 
+				    		</script>";
+
+					}
+				 ?>
+			    </div>
+			   	</div>
+			   	<div class="row">
+			   	<h3 align="center">Tabel Order Barang</h3>
+			   	<br>
 				<div class="dwdcuy">
 				<table align="center">
 					<tr>
@@ -198,36 +225,7 @@
 					?>
 				</table>
 				</div>
-			   </div>
-			    <div class="col-md-6 login-left">
-			  	 <h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
-
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
-									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
-				 	
-				 ?>
-			    </div>
-
-			   	
+			   	</div>
 			   <div class="clearfix"> </div>
 			 </div>
 		   </div>

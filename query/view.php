@@ -22,11 +22,13 @@
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <!--//webfont-->
 <script src="../js/jquery.easydropdown.js"></script>
+<script src="../js/utama.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
 <script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
@@ -150,8 +152,10 @@
 							$harga = $rows->brg_harga;
 								echo "
 									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
+										<img src='../images/$id.jpg'>
+										<h4>$nama</h4><br>
+										<h5>$id - $ktg</h5>
+										<h5>Rp $harga</h5><br>
 									</div>
 									";
 						}
@@ -164,11 +168,14 @@
 
 			   <div class="col-md-6 login-right">
 				<h3>VIEW (barang terjual)</h3>
+				<div class="dwdcuy">
 				 <table align="center">
 						<tr>
+							<th>No</th>
 							<th>ID barang</th>
 							<th>Nama barang</th>
 							<th>Jumlah dibeli</th>
+							<th>Foto Barang</th>
 						</tr>
 						<?php
 							include('../config.php');
@@ -182,16 +189,20 @@
 									$nama = $rows->brg_nama;
 									$jlh = $rows->jumlah_terjual;
 									echo '
-									<tr bgcolor="#fff">
+									<tr bgcolor="#fff" class="poto">
+										<td>'.$no.'</td>
 										<td align="center">'.$id.'</td>
 										<td align="center">'.$nama.'</td>
 										<td align="center">'.$jlh.'</td>
+										<td align="center"><img src="../images/'.$id.'.jpg"></td>
 									</tr>
 									';
+
 									$no++;
 								}				
 						?>
 					</table>
+					</div>
 			   </div>	
 			   <div class="clearfix"> </div>
 			 </div>

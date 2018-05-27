@@ -22,6 +22,7 @@
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
+<link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -164,6 +165,7 @@
 				<div class="row">
 					<div class="col-md-6 login-right">
 					  	 <h3>Tabel Order Barang</h3>
+					  	 <div class="dwdcuy">
 					  	 <table align="center">
 						<tr>
 							<th>Order ID</th>
@@ -195,9 +197,11 @@
 								}				
 						?>
 					</table>
+					</div>
 					   </div>
 					   <div class="col-md-6 login-right">
 					  	 <h3>Tabel Detail Order</h3>
+					  	 <div class="dwdcuy">
 						 <table align="center">
 						<tr>
 							<th>Order ID</th>
@@ -226,6 +230,7 @@
 								}				
 						?>
 					</table>
+					</div>
 					    </div>
 					    <div class="clearfix"> </div>		 	
 				</div>

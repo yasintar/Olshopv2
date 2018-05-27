@@ -4,7 +4,10 @@
   width: 56%;
   text-align: center;
 }
-.dwdcuy th, td {
+.dwdcuy th{
+  text-align: center;
+}
+.dwdcuy td {
     text-align: left;
     padding: 8px;
 }
@@ -19,4 +22,9 @@
 .oldata a{
 	text-decoration: none;
 	color: #00aaff;
+}
+
+.poto img{
+  height: 190px;
+  width: 160px;
 }

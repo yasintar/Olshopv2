@@ -136,33 +136,36 @@
 			   </div>
 			   <div class="account_grid">
 			    <div class="col-md-6 login-left">
-			  	 <h3>JOIN (detail barang yang dibeli pelanggan)</h3>
+			  	 <h3 align="center">JOIN (detail barang yang dibeli pelanggan)</h3>
 			  	 <div class="dwdcuy">
 				  <table align="center">
 						<tr>
+							<th>Foto Barang</th>
 							<th>Barang</th>
 							<th>Jumlah</th>
 						</tr>
 						<?php
 						 	include ('../config.php');
 
-							$sql = "SELECT barang.brg_nama, SUM(detail_order.jumlah) AS jumlah
+							$sql = "SELECT barang.brg_id, barang.brg_nama, SUM(detail_order.jumlah) AS jumlah
 									FROM pembeli
 									JOIN order_brg ON pembeli.pbl_id = order_brg.pbl_id
 									JOIN detail_order ON order_brg.od_id = detail_order.od_id
 									JOIN barang ON detail_order.brg_id = barang.brg_id
 									AND pembeli.pbl_status = 'pelanggan'
-									GROUP BY barang.brg_nama";
+									GROUP BY barang.brg_id, barang.brg_nama";
 				 	
 							$res = mysqli_query($conn, $sql);
 
 							//if(mysqli_num_rows($sql) > 0){
 								//$no = 1;
 								while($rows = $res->fetch_object()){
+									$idi = $rows->brg_id;
 									$brg = $rows->brg_nama;
 									$jlh = $rows->jumlah;
 									echo '
 									<tr bgcolor="#fff">
+										<td class="poto"><img src="../images/'.$idi.'.jpg"></td>
 										<td>'.$brg.'</td>
 										<td align="center">'.$jlh.'</td>
 									</tr>
@@ -175,31 +178,48 @@
 			    </div>
 
 			   <div class="col-md-6 login-right">
-				<h3>VIEW (barang belum terjual)</h3>
-				 <?php
-				 	include ('../config.php');
+				<h3 align="center">JOIN (Top 5 terjual)</h3>
+				 <div class="dwdcuy">
+				  <table align="center">
+						<tr>
+							<th>Foto Barang</th>
+							<th>Barang</th>
+							<th>Jumlah</th>
+						</tr>
+						<?php
+						 	include ('../config.php');
 
-					$sql = "SELECT * FROM brg_notsale";
-					$result = mysqli_query($conn, $sql);
-
-					if($result->num_rows != 0){
-						while ($rows = $result->fetch_object()) {
-							$id = $rows->brg_id;
-							$ktg = $rows->ktg_id;
-							$nama = $rows->brg_nama;
-							$harga = $rows->brg_harga;
-								echo "
-									<div align='center'>
-										<h4>$nama</h4>
-										<h5>$id</h5><h5>$ktg</h5><h5>$harga</h5><br>
-									</div>
+							$sql = "SELECT *
+									FROM (SELECT b.brg_id, b.brg_nama, SUM(dd.jumlah) AS jumlah_terjual
+									FROM barang b JOIN detail_order dd USING (brg_id)
+									JOIN order_brg od USING (od_id)
+									JOIN pembeli pbl USING (pbl_id)
+									WHERE pbl_status = 'pelanggan'
+									GROUP BY b.brg_id, b.brg_nama
+									ORDER BY jumlah_terjual DESC)temp
+									LIMIT 5;
 									";
-						}
-					}else{
-						echo "tidak ada komentar";
-					}
 				 	
-				 ?>
+							$res = mysqli_query($conn, $sql);
+
+							//if(mysqli_num_rows($sql) > 0){
+								//$no = 1;
+								while($rows = $res->fetch_object()){
+									$idi = $rows->brg_id;
+									$brg = $rows->brg_nama;
+									$jlh = $rows->jumlah_terjual;
+									echo '
+									<tr bgcolor="#fff">
+										<td class="poto"><img src="../images/'.$idi.'.jpg"></td>
+										<td>'.$brg.'</td>
+										<td align="center">'.$jlh.'</td>
+									</tr>
+									';
+									//$no++;
+								}				
+						?>
+					</table>
+					</div>
 			   </div>	
 			   <div class="clearfix"> </div>
 			 </div>

@@ -202,7 +202,7 @@
 
 							//if(mysqli_num_rows($sql) > 0){
 								$no = 1;
-								while($data = $res->fetch_object()){
+								while($data2 = $res->fetch_object()){
 									$idpbl2 = $data2->pbl_id;
 									$nama2 = $data2->pbl_nama;
 									$alamat2 = $data2->pbl_alamat;

@@ -140,47 +140,34 @@
 						<form method="post" action="trigger2.php">
 					  	 	<div>
 								<span>ID Pembeli<label>*</label></span>
-								<input type="text" name="idpbl"> 
+								<input type="hidden" value="<?php echo $row['idpbl'];?>" name="idpbl"> 
 							</div>
-						  	<input type="submit" value="Find" name="subselect">
+							<div>
+								<span>Nama<label>*</label></span>
+								<input type="text" value="<?php echo $row['nama'];?>" name="nama"> 
+							</div>
+							<div>
+								<span>Alamat<label>*</label></span>
+								<input type="text" value="<?php echo $row['alamat'];?>" name="alamat"> 
+							</div>
+							<div>
+								<span>No Telepon<label>*</label></span>
+								<input type="text" value="<?php echo $row['telepon'];?>" name="telepon"> 
+							</div>
+							<div>
+								<span>Email<label>*</label></span>
+								<input type="text" value="<?php echo $row['email'];?>" name="email"> 
+							</div>
+							<div>
+								<span>Status<label>*</label></span>
+								<input type="text" value="<?php echo $row['status'];?>" name="status"> 
+							</div>
 					  	 </form>
-					  	 <?php
-					  	 	include ('../config.php');
-
-							if(isset($_POST['subselect'])) {
-						  		if(isset($_POST['idpbl'])){
-									$idpbl = $_POST['idpbl'];
-
-									$sql = "SELECT * FROM pembeli WHERE pbl_id = '$idpbl'";
-									$res = mysqli_query($conn, $sql);
-									
-									$no = 1;
-									while($data = $res->fetch_object()){
-										$idpbl = $data->pbl_id;
-										$nama = $data->pbl_nama;
-										$alamat = $data->pbl_alamat;
-										$telepon = $data->pbl_telp;
-										$email = $data->pbl_email;
-										$status = $data->pbl_status;
-										echo '
-										<tr bgcolor="#fff">
-											<td align="center">'.$idpbl.'</td><br>
-											<td align="center">'.$nama.'</td><br>
-											<td align="center">'.$telepon.'</td><br>
-											<td align="center">'.$email.'</td><br>
-											<td align="center">'.$status.'</td><br>
-											<td><a href="edittrig.php">edit</a></td>
-									</tr>
-									';
-									$no++;
-								}				
-								}
-							}
-					  	 ?>	
-							</div>
+					  	 	<div class="register-but">
+					   			<input type="submit" value="Save" name="simpan">
+					   		</div>
 				</div>
-					  
-					    <div class="clearfix"> </div>		 	
+					 <div class="clearfix"> </div>		 	
 				</div>
 			 </div>
 			    

@@ -136,102 +136,50 @@
 			   </div>
 			   <div class="account_grid">
 			   	<div class="row login-right">
-			   		<h3>TRIGGER (hapus record di tabel order barang)</h3>
-						<form method="post" action="trigger.php">
+			   		<h3>TRIGGER (update data pembeli di tabel pembeli)</h3>
+						<form method="post" action="trigger2.php">
 					  	 	<div>
-								<span>ID Order<label>*</label></span>
-								<input type="text" name="idorder"> 
+								<span>ID Pembeli<label>*</label></span>
+								<input type="text" name="idpbl"> 
 							</div>
-						  	<input type="submit" value="Delete" name="subdelete">
+						  	<input type="submit" value="Find" name="subselect">
 					  	 </form>
 					  	 <?php
 					  	 	include ('../config.php');
 
-							if(isset($_POST['subdelete'])) {
-						  		if(isset($_POST['idorder'])){
-									$idorder = $_POST['idorder'];
+							if(isset($_POST['subselect'])) {
+						  		if(isset($_POST['idpbl'])){
+									$idpbl = $_POST['idpbl'];
 
-									$sql = "DELETE FROM order_brg WHERE od_id = '$idorder'";
-
-									mysqli_query($conn, $sql) or die("Error, query failed!");
+									$sql = "SELECT * FROM pembeli WHERE pbl_id = '$idpbl'";
+									$res = mysqli_query($conn, $sql);
 									
-									echo "<script>
-							             alert('Delete Successfully'); 
-							    		</script>";
-								}
-							}
-					  	 ?>	
-				</div>
-				<div class="row">
-					<div class="col-md-6 login-right">
-					  	 <h3>Tabel Order Barang</h3>
-					  	 <div class="dwdcuy">
-					  	 <table align="center">
-						<tr>
-							<th>Order ID</th>
-							<th>ID Bayar</th>
-							<th>ID Pembeli</th>
-							<th>Jumlah Order</th>
-						</tr>
-						<?php
-							include('../config.php');
-							$sql = "SELECT * FROM order_brg order by od_id";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								$no = 1;
-								while($data = $res->fetch_object()){
-									$odid = $data->od_id;
-									$byrid = $data->byr_id;
-									$pblid = $data->pbl_id;
-									$jlh = $data->od_jumlah;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid.'</td>
-										<td align="center">'.$byrid.'</td>
-										<td align="center">'.$pblid.'</td>
-										<td align="center">'.$jlh.'</td>
+									$no = 1;
+									while($data = $res->fetch_object()){
+										$idpbl = $data->pbl_id;
+										$nama = $data->pbl_nama;
+										$alamat = $data->pbl_alamat;
+										$telepon = $data->pbl_telp;
+										$email = $data->pbl_email;
+										$status = $data->pbl_status;
+										echo '
+										<tr bgcolor="#fff">
+											<td align="center">'.$idpbl.'</td><br>
+											<td align="center">'.$nama.'</td><br>
+											<td align="center">'.$telepon.'</td><br>
+											<td align="center">'.$email.'</td><br>
+											<td align="center">'.$status.'</td><br>
+											<td><a href="">edit</a></td>
 									</tr>
 									';
 									$no++;
 								}				
-						?>
-					</table>
-					</div>
-					   </div>
-					   <div class="col-md-6 login-right">
-					  	 <h3>Tabel Log</h3>
-					  	 <div class="dwdcuy">
-						 <table align="center">
-						<tr>
-							<th>Order ID</th>
-							<th>ID Barang</th>
-							<th>Jumlah Order</th>
-						</tr>
-						<?php
-							include('../config.php');
-							$sql = "SELECT * FROM detail_order order by od_id";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								//$no = 1;
-								while($data2 = $res->fetch_object()){
-									$odid2 = $data2->od_id;
-									$brgid = $data2->brg_id;
-									$jlh2 = $data2->jumlah;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid2.'</td>
-										<td align="center">'.$brgid.'</td>
-										<td align="center">'.$jlh2.'</td>
-									</tr>
-									';
-									//$no++;
-								}				
-						?>
-					</table>
-					</div>
-					    </div>
+								}
+							}
+					  	 ?>	
+							</div>
+				</div>
+					  
 					    <div class="clearfix"> </div>		 	
 				</div>
 			 </div>

@@ -53,7 +53,7 @@
 	<div class="container">
 		<div class="header-top">
       		<div class="logo">
-				<a href="#"><h6>Online Shop</h6><h2> RO..NA </h2></a>
+				<a href="index.php"><h6>Online Shop</h6><h2> RO..NA </h2></a>
 			 </div>
 		   <div class="header_right">
 			 <ul class="social">

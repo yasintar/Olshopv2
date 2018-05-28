@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -45,7 +48,19 @@
 				 </div>
 			   <div class="header_right">
 				 <ul class="social">
-				 	<li align="center"><a href="login.php" class="banner_btn">Login (admin only)</a></li><br><br>
+					<?php			 	
+					if(isset($_SESSION['user']) != 1){
+					?>
+				 	<li align="center"><a href="login.php" class="banner_btn">Login (admin only)</a></li>
+				 	<?php
+				 	}
+				 	else{
+				 	?>
+				 		<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li>
+				 	<?php
+				 	}
+				 	?> 
+				 	<br><br>
 					<li><a href="https://www.facebook.com/HMTCFTIf/" target="_blank" rel="nofollow"> <i class="fb"> </i> </a></li>
 					<li><a href="https://twitter.com/hmtc_its" target="_blank" rel="nofollow"><i class="tw"> </i> </a></li>
 					<li><a href="https://www.youtube.com/user/bluepresshmtc" target="_blank" rel="nofollow"><i class="utube"> </i> </a></li>
@@ -77,10 +92,10 @@
 	   		 			<li class="check"><a href="checkout.php">Checkout</a></li>
 	   		 			<div class='clearfix'></div>
 	   		 		</ul>
-	   		 		<div class="search">
+	   		 		<!-- <div class="search">
 		  			   <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 					   <input type="submit" value="">
-		  			</div>
+		  			</div> -->
 		  			<div class="welcome_box">
 		  				<h3>Welcome to </br>R O N A</h3> <br>
 		  			</div>
@@ -153,7 +168,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/grpolkablazer.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>	
+									<!-- <a href="" class="button item_add item_1"> </a>	 -->
 									 <div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Grey Polka Blazer</p>
@@ -170,7 +185,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/bblongouter.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>		
+									<!-- <a href="" class="button item_add item_1"> </a>		 -->
 									<div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Black Long Outer</p>
@@ -187,7 +202,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/navycullote.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>	
+									<!-- <a href="" class="button item_add item_1"> </a>	 -->
 									<div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Navy Tie Up Cullote</p>
@@ -208,8 +223,8 @@
 					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/roundneck.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>		
+									<img src="images/BR007.jpg" class="img-responsive" alt=""/>
+									<!-- <a href="" class="button item_add item_1"> </a>		 -->
 								    <div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Round Neck T-Shirt</p>
@@ -226,7 +241,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/mensporty.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>		
+									<!-- <a href="" class="button item_add item_1"> </a>		 -->
 								    <div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Sporty Jacket</p>
@@ -242,8 +257,8 @@
 					  	  <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/fitshorts.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>	
+									<img src="images/BR010.jpg" class="img-responsive" alt=""/>
+									<!-- <a href="" class="button item_add item_1"> </a>	 -->
 									 <div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Regular Fit Shorts</p>
@@ -265,7 +280,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/parkayellow.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>		
+									<!-- <a href="" class="button item_add item_1"> </a>		 -->
 									<div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Parka Yellow</p>
@@ -282,7 +297,7 @@
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/jumpsuit.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>	
+									<!-- <a href="" class="button item_add item_1"> </a>	 -->
 									<div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Shoulder Jumpsuit</p>
@@ -298,8 +313,8 @@
 					  	    <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
-									<img src="images/spicyprint.jpg" class="img-responsive" alt=""/>
-									<a href="" class="button item_add item_1"> </a>	
+									<img src="images/BR027.jpg" class="img-responsive" alt=""/>
+									<!-- <a href="" class="button item_add item_1"> </a>	 -->
 									<div class="product_container">
 									   <div class="cart-left">
 										 <p class="title">Spicy Print Sweater</p>

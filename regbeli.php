@@ -45,6 +45,4 @@
 
 	}
 	header("location: checkout.php?action=empty");
-	#window.history.go(-1);
-	// echo "<meta http-equiv='refresh' content='index.html'>";
 ?> 

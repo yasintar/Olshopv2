@@ -165,7 +165,6 @@
 					<h3 class="m_1">W O M E N</h3>
 					 <div class="content_grid">
 					   <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/grpolkablazer.jpg" class="img-responsive" alt=""/>
@@ -182,7 +181,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/bblongouter.jpg" class="img-responsive" alt=""/>
@@ -199,7 +197,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
-					  	      <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/navycullote.jpg" class="img-responsive" alt=""/>
@@ -221,7 +218,6 @@
 				  <h3 class="m_2">M E N</h3>
 				   <div class="content_grid">
 				   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/BR007.jpg" class="img-responsive" alt=""/>
@@ -238,7 +234,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	     <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/mensporty.jpg" class="img-responsive" alt=""/>
@@ -255,7 +250,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
-					  	  <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/BR010.jpg" class="img-responsive" alt=""/>
@@ -277,7 +271,6 @@
 				    <h3 class="m_2">K I D S</h3>
 				   <div class="content_grid">
 				   		<div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/parkayellow.jpg" class="img-responsive" alt=""/>
@@ -294,7 +287,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem"> 
-					  	   <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/jumpsuit.jpg" class="img-responsive" alt=""/>
@@ -311,7 +303,6 @@
 			                 </a>
 					    </div>
 					    <div class="col_1_of_3 span_1_of_3 simpleCart_shelfItem last_1"> 
-					  	    <a href="single.php">
 							   <div class="inner_content clearfix">
 								<div class="product_image">
 									<img src="images/BR027.jpg" class="img-responsive" alt=""/>

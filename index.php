@@ -56,8 +56,8 @@
 				 	}
 				 	else{
 				 	?>
-				 		<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li>
-				 		<li align="center"><a href="indexadmin.php">Sini</a></li>
+				 		<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li><br>
+				 		<li align="center"><a href="indexadmin.php">Admin Area</a></li>
 				 	<?php
 				 	}
 				 	?> 
@@ -174,7 +174,7 @@
 									   <div class="cart-left">
 										 <p class="title">Grey Polka Blazer</p>
 									   </div>
-									   <span class="amount item_price">Rp140.000</span>
+									   <span class="amount item_price">140.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -191,7 +191,7 @@
 									   <div class="cart-left">
 										 <p class="title">Black Long Outer</p>
 									   </div>
-									   <span class="amount item_price">Rp180.000</span>
+									   <span class="amount item_price">180.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								</div>
@@ -208,7 +208,7 @@
 									   <div class="cart-left">
 										 <p class="title">Navy Tie Up Cullote</p>
 									   </div>
-									   <span class="amount item_price">Rp150.000</span>
+									   <span class="amount item_price">150.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -230,7 +230,7 @@
 									   <div class="cart-left">
 										 <p class="title">Round Neck T-Shirt</p>
 									   </div>
-									   <span class="amount item_price">Rp90.000</span>
+									   <span class="amount item_price">90.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -247,7 +247,7 @@
 									   <div class="cart-left">
 										 <p class="title">Sporty Jacket</p>
 									   </div>
-									   <span class="amount item_price">Rp230.000</span>
+									   <span class="amount item_price">230.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -264,7 +264,7 @@
 									   <div class="cart-left">
 										 <p class="title">Regular Fit Shorts</p>
 									   </div>
-									   <span class="amount item_price">Rp90.000</span>
+									   <span class="amount item_price">90.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -286,7 +286,7 @@
 									   <div class="cart-left">
 										 <p class="title">Parka Yellow</p>
 									   </div>
-									   <span class="amount item_price">Rp140.000</span>
+									   <span class="amount item_price">140.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -303,7 +303,7 @@
 									   <div class="cart-left">
 										 <p class="title">Shoulder Jumpsuit</p>
 									   </div>
-									   <span class="amount item_price">Rp90.000</span>
+									   <span class="amount item_price">90.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -320,7 +320,7 @@
 									   <div class="cart-left">
 										 <p class="title">Spicy Print Sweater</p>
 									   </div>
-									   <span class="amount item_price">Rp80.000</span>
+									   <span class="amount item_price">80.000</span>
 									   <div class="clearfix"></div>
 								     </div>		
 								  </div>
@@ -380,45 +380,47 @@
 					<h3>Category</h3>
 					<ul class="list1">
 					  <li><a href="index.php">Home</a></li>
-					  <li><a href="about.php">About us</a></li>
-					  <li><a href="about.php">Eshop</a></li>
-					  <li><a href="about.php">Features</a></li>
-					  <li><a href="about.php">New Collections</a></li>
-					  <li><a href="typo.php">Typo</a></li>
-					  <li><a href="contact.php">Contact</a></li>
+					  <li><a href="#">About us</a></li>
+					  <li><a href="#">Eshop</a></li>
+					  <li><a href="#">Features</a></li>
+					  <li><a href="#">New Collections</a></li>
+					  <li><a href="#">Typo</a></li>
+					  <li><a href="#">Contact</a></li>
 					</ul>
 				</div>
 				<div class="footer-grid">
 					<h3>Our Account</h3>
 					<ul class="list1">
-					  <li><a href="login.php">Your Account</a></li>
-					  <li><a href="contact.php">Personal information</a></li>
+					  <li><a href="#">Your Account</a></li>
+					  <li><a href="#">Personal information</a></li>
 					  <li><a href="contact.php">Addresses</a></li>
 					  <li><a href="#">Discount</a></li>
+					  <li><a href="#">Tax</a></li>
 					  <li><a href="checkout.php">Orders history</a></li>
-					  <li><a href="about.php">Search Terms</a></li>
+					  <li><a href="#">Search Terms</a></li>
 					</ul>
 				</div>
 				<div class="footer-grid">
 					<h3>Our Support</h3>
 					<ul class="list1">
-					  <li><a href="contact.php">Site Map</a></li>
-					  <li><a href="about.php">Search Terms</a></li>
-					  <li><a href="about.php">Advanced Search</a></li>
-					  <li><a href="about.php">Mobile</a></li>
+					  <li><a href="#">Site Map</a></li>
+					  <li><a href="#">Search Terms</a></li>
+					  <li><a href="#">Advanced Search</a></li>
+					  <li><a href="#">Mobile</a></li>
 					  <li><a href="contact.php">Contact Us</a></li>
-					  <li><a href="contact.php">Mobile</a></li>
+					  <li><a href="#">Mobile</a></li>
 					  <li><a href="contact.php">Addresses</a></li>
 					</ul>
 				</div>
 				<div class="footer-grid">
-					<h3>Newest Collection</h3>
-					<p class="footer_desc">I will notify you if there is something new here.</p>
-					<div class="search_footer">
-					  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-					  <input type="submit" value="Subscribe">
-					</div>
-					<img src="images/pay.png" class="img-responsive" alt=""/>
+					<h3>FAQ</h3>
+					<ul class="list1">
+					  <li><a href="#">Terms and Condition</a></li>
+					  <li><a href="#">Privacy and Cookies</a></li>
+					  <li><a href="#">Accessibility</a></li>
+					  <li><a href="#">Terms and Conditions</a></li>
+					  <li><a href="#">Modern Slavery Act</a></li>
+					</ul>
 				</div>
 				 <div class="clearfix"> </div>
 			</div>

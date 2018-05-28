@@ -311,54 +311,56 @@ if(isset($_SESSION["cart_item"])){
 	    </div>
     </div>
     <div class="footer">
-		<div class="container">
-			<div class="footer-grid">
-				<h3>Category</h3>
-				<ul class="list1">
-				  <li><a href="index.php">Home</a></li>
-				  <li><a href="about.php">About us</a></li>
-				  <li><a href="about.php">Eshop</a></li>
-				  <li><a href="about.php">Features</a></li>
-				  <li><a href="about.php">New Collections</a></li>
-				  <li><a href="typo.php">Typo</a></li>
-				  <li><a href="contact.php">Contact</a></li>
-				</ul>
-			</div>
-			<div class="footer-grid">
-				<h3>Our Account</h3>
-				<ul class="list1">
-				  <li><a href="login.php">Your Account</a></li>
-				  <li><a href="contact.php">Personal information</a></li>
-				  <li><a href="contact.php">Addresses</a></li>
-				  <li><a href="#">Discount</a></li>
-				  <li><a href="checkout.php">Orders history</a></li>
-				  <li><a href="about.php">Search Terms</a></li>
-				</ul>
-			</div>
-			<div class="footer-grid">
-				<h3>Our Support</h3>
-				<ul class="list1">
-				  <li><a href="contact.php">Site Map</a></li>
-				  <li><a href="about.php">Search Terms</a></li>
-				  <li><a href="about.php">Advanced Search</a></li>
-				  <li><a href="about.php">Mobile</a></li>
-				  <li><a href="contact.php">Contact Us</a></li>
-				  <li><a href="contact.php">Mobile</a></li>
-				  <li><a href="contact.php">Addresses</a></li>
-				</ul>
-			</div>
-			<div class="footer-grid">
-				<h3>Newest Collection</h3>
-				<p class="footer_desc">I will notify you if there is something new here.</p>
-				<div class="search_footer">
-				  <input type="text" class="text" value="Your Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Email';}">
-				  <input type="submit" value="Submit">
+			<div class="container">
+				<div class="footer-grid">
+					<h3>Category</h3>
+					<ul class="list1">
+					  <li><a href="index.php">Home</a></li>
+					  <li><a href="#">About us</a></li>
+					  <li><a href="#">Eshop</a></li>
+					  <li><a href="#">Features</a></li>
+					  <li><a href="#">New Collections</a></li>
+					  <li><a href="#">Typo</a></li>
+					  <li><a href="#">Contact</a></li>
+					</ul>
 				</div>
-				<img src="images/pay.png" class="img-responsive" alt=""/>
+				<div class="footer-grid">
+					<h3>Our Account</h3>
+					<ul class="list1">
+					  <li><a href="#">Your Account</a></li>
+					  <li><a href="#">Personal information</a></li>
+					  <li><a href="contact.php">Addresses</a></li>
+					  <li><a href="#">Discount</a></li>
+					  <li><a href="#">Tax</a></li>
+					  <li><a href="checkout.php">Orders history</a></li>
+					  <li><a href="#">Search Terms</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid">
+					<h3>Our Support</h3>
+					<ul class="list1">
+					  <li><a href="#">Site Map</a></li>
+					  <li><a href="#">Search Terms</a></li>
+					  <li><a href="#">Advanced Search</a></li>
+					  <li><a href="#">Mobile</a></li>
+					  <li><a href="contact.php">Contact Us</a></li>
+					  <li><a href="#">Mobile</a></li>
+					  <li><a href="contact.php">Addresses</a></li>
+					</ul>
+				</div>
+				<div class="footer-grid">
+					<h3>FAQ</h3>
+					<ul class="list1">
+					  <li><a href="#">Terms and Condition</a></li>
+					  <li><a href="#">Privacy and Cookies</a></li>
+					  <li><a href="#">Accessibility</a></li>
+					  <li><a href="#">Terms and Conditions</a></li>
+					  <li><a href="#">Modern Slavery Act</a></li>
+					</ul>
+				</div>
+				 <div class="clearfix"> </div>
 			</div>
-			 <div class="clearfix"> </div>
 		</div>
-	</div>
 	<div class="footer_bottom">
 		<div class="container">
 			<div class="copy">

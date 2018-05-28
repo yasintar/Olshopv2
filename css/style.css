@@ -22,6 +22,7 @@ body a{
 	-o-background-size: cover;
 	background-size: cover;
 	background-position: center;
+
 }
 .header-top {
 	padding: 2em 0 3em;
@@ -31,6 +32,14 @@ body a{
   background-color: rgba(49, 194, 219, 0.66);
   padding: 27px;
   text-align: center;
+  transition: box-shadow .3s;
+  border-radius:10px;
+  border: 0px solid #ccc;
+
+ 
+}
+.logo:hover{
+	box-shadow: 0 0 30px rgba(33,33,33,.2);
 }
 .logo a {
    font-family: 'Raleway', sans-serif;
@@ -53,6 +62,7 @@ body a{
 	float:right;
 	margin-top: 2em;
 	width: 24%;
+	
 }
 .lang_list{
 	float:left;
@@ -232,6 +242,14 @@ ul.quick_access li.check{
 	background:#31C2DB;
 	padding:5em 1.4em;
 	margin-top:10px;
+	border: none;
+  color: white;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.welcome_box:hover{
+	opacity: 1;
 }
 .welcome_box h3{
 	color:#333;
@@ -248,17 +266,21 @@ ul.quick_access li.check{
 	float: right;
 	margin-top: 4em;
 	width: 50%;
+	
 }
+
 .banner_right h1{
 	color: #fff;
     font-size: 3.5em;
     text-transform: capitalize;
     line-height: 1.2em;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .banner_right p {
   color: #fff;
-  font-size: 0.9em;
+  font-size: 1.2em;
   line-height: 1.8em;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 .banner_btn {
 	display: inline-block;
@@ -2426,6 +2448,7 @@ h3.typo-title {
 }
 .container {
   padding:0 10px;
+  background: rgba(0, 0, 0, 0.5);
 }
 .copy {
   text-align: center;
@@ -2441,6 +2464,7 @@ h3.typo-title {
   float: none;
   text-align: center;
   padding: 15px 53px;
+
 }
 i.cart_icon {
   width: 25px;

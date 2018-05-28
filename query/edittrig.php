@@ -1,13 +1,15 @@
 <?php
-	session_start();
-
-	if(isset($_SESSION['user']) != 1){
-		echo "<script>
-			alert('you need to login as admin first');
-			window.location.assign('../login.php');
-			</script>";
+include '../config.php';
+$idpbl      = $_GET['idpbl'];
+$sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
+$res  		= mysqli_query($conn, $sql);
+$row        = mysqli_fetch_array($res);
+// membuat function untuk set aktif radio button
+function active_radio_button($value,$input){
+    // apabilan value dari radio sama dengan yang di input
+    $result =  $value==$input?'checked':'';
+    return $result;
 	}
-	
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -140,32 +142,52 @@
 						<form method="post" action="trigger2.php">
 					  	 	<div>
 								<span>ID Pembeli<label>*</label></span>
-								<input type="hidden" value="<?php echo $row['idpbl'];?>" name="idpbl"> 
+								<input type="hidden" value="<?php echo $row['pbl_id'];?>" name="idpbl"> 
 							</div>
 							<div>
 								<span>Nama<label>*</label></span>
-								<input type="text" value="<?php echo $row['nama'];?>" name="nama"> 
+								<input type="text" value="<?php echo $row['pbl_nama'];?>" name="nama"> 
 							</div>
 							<div>
 								<span>Alamat<label>*</label></span>
-								<input type="text" value="<?php echo $row['alamat'];?>" name="alamat"> 
+								<input type="text" value="<?php echo $row['pbl_alamat'];?>" name="alamat"> 
 							</div>
 							<div>
 								<span>No Telepon<label>*</label></span>
-								<input type="text" value="<?php echo $row['telepon'];?>" name="telepon"> 
+								<input type="text" value="<?php echo $row['pbl_telp'];?>" name="telepon"> 
 							</div>
 							<div>
 								<span>Email<label>*</label></span>
-								<input type="text" value="<?php echo $row['email'];?>" name="email"> 
+								<input type="text" value="<?php echo $row['pbl_email'];?>" name="email"> 
 							</div>
 							<div>
 								<span>Status<label>*</label></span>
-								<input type="text" value="<?php echo $row['status'];?>" name="status"> 
+								<input type="text" value="<?php echo $row['pbl_status'];?>" name="status"> 
 							</div>
 					  	 </form>
 					  	 	<div class="register-but">
 					   			<input type="submit" value="Save" name="simpan">
 					   		</div>
+					<?php
+					include '../config.php';
+// menyimpan data kedalam variabel
+					if(isset($_POST['simpan'])){
+						$idpbl   		= $_POST['pbl_id'];
+						$nama           = $_POST['pbl_nama'];
+						$alamat         = $_POST['pbl_alamat'];
+						$notelp  	    = $_POST['pbl_telp'];
+						$email  = $_POST['pbl_email'];
+						$status         = $_POST['pbl_status'];
+// query SQL untuk insert data
+						$query = "UPDATE pembeli SET pbl_nama='$nama',pbl_alamat='$alamat',pbl_telp='$notelp',pbl_email='$email',pbl_status='$status' where pbl_id='$idpbl'";
+						mysqli_query($koneksi, $query);
+// mengalihkan ke halaman index.php
+						header("location:trigger2.php");
+						}
+						else  {
+							die("Gagal menyimpan perubahan...");
+    					}
+					?>
 				</div>
 					 <div class="clearfix"> </div>		 	
 				</div>

@@ -179,8 +179,52 @@
 					  	 ?>	
 							</div>
 				</div>
-					  
-					    <div class="clearfix"> </div>		 	
+					    <div class="clearfix"> </div>
+					    <div class="row">
+					<div class="col-md-6 login-left">
+					  	 <h3 align="center">Tabel Log</h3>
+					  	 <div class="dwdcuy">
+					  	 <table align="center">
+						<tr>
+							<th>ID Pembeli</th>
+							<th>Nama</th>
+							<th>Alamat</th>
+							<th>No Telepon</th>
+							<th>Email</th>
+							<th>Status</th>
+							<th>Tanggal Perubahan</th>
+							<th>Status Perubahan</th>
+						</tr>
+						<?php
+							include('../config.php');
+							$sql = "SELECT * FROM log_pembeli";
+							$res = mysqli_query($conn, $sql);
+
+							//if(mysqli_num_rows($sql) > 0){
+								$no = 1;
+								while($data = $res->fetch_object()){
+									$idpbl2 = $data2->pbl_id;
+									$nama2 = $data2->pbl_nama;
+									$alamat2 = $data2->pbl_alamat;
+									$telepon2 = $data2->pbl_telp;
+									$email2 = $data2->pbl_email;
+									$status2 = $data2->pbl_status;
+									echo '
+									<tr bgcolor="#fff">
+										<td align="center">'.$idpbl2.'</td>
+										<td align="center">'.$nama2.'</td>
+										<td align="center">'.$alamat2.'</td>
+										<td align="center">'.$telepon2.'</td>
+										<td align="center">'.$email2.'</td>
+										<td align="center">'.$status2.'</td>
+									</tr>
+									';
+									$no++;
+								}				
+						?>
+					</table>
+					</div>
+					   </div>		 	
 				</div>
 			 </div>
 			    

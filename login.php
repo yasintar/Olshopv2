@@ -107,11 +107,11 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			   <div class="col-md-6 login-left">
+			   <!-- <div class="col-md-6 login-left">
 			  	 <h3>NEW CUSTOMERS</h3>
 				 <p>By creating an account here, you will get an ID customer. You can use it to login easier, move through the checkout process faster, store multiple shipping addresses, view and track your orders.</p>
 				 <a class="acount-btn" href="register.php">Create an Account</a>
-			   </div>
+			   </div> -->
 			   <div class="col-md-6 login-right">
 			  	<h3>ADMIN LOG IN</h3>
 				<form method="post" action="val_access.php">
@@ -123,7 +123,7 @@
 					<span>Password<label>*</label></span>
 					<input type="password" name="passw"> 
 				  </div>
-				  <a class="forgot" href="#">Forgot Your Password?</a>
+				  <!-- <a class="forgot" href="#">Forgot Your Password?</a> -->
 				  <input type="submit" value="Login" name="submit">
 			    </form>
 			   </div>	

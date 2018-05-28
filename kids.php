@@ -158,11 +158,7 @@
 		            <label>Sort By</label>
 		            <select>
 		                            <option value="">
-		                    Position                </option>
-		                            <option value="">
-		                    Name                </option>
-		                            <option value="">
-		                    Price                </option>
+		                    Code                </option>
 		            </select>
 		            <a href=""><img src="images/arrow2.gif" alt="" class="v-middle"></a>
                    </div>
@@ -183,7 +179,7 @@
                <label>Show</label>
                   <select>
                             <option value="" selected="selected">
-                    7                </option>
+                    All              </option>
                   </select> per page        
                </div>
        	   </div>

@@ -57,6 +57,7 @@
 				 	else{
 				 	?>
 				 		<li align="center"><form action="logout.php" method="post"><button type="submit" name="logout" class="btn banner_btn">Log Out (admin)</button></form></li>
+				 		<li align="center"><a href="indexadmin.php">Sini</a></li>
 				 	<?php
 				 	}
 				 	?> 

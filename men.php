@@ -151,11 +151,7 @@
 		            <label>Sort By</label>
 		            <select>
 		                            <option value="">
-		                    Position                </option>
-		                            <option value="">
-		                    Name                </option>
-		                            <option value="">
-		                    Price                </option>
+		                    Code                </option>
 		            </select>
 		            <a href=""><img src="images/arrow2.gif" alt="" class="v-middle"></a>
                    </div>
@@ -163,8 +159,7 @@
     	         <ul class="women_pagenation dc_paginationA dc_paginationA06">
 			       <li><a href="#" class="previous">Page:</a></li>
 			       <li class="active"><a href="men.php">1</a></li>
-			       <li><a href="men2.php">2</a></li>
-			       <li><a href="men2.php">next page >></a></li>
+			       <!-- <li><a href="men2.php">next page >></a></li> -->
 		  	     </ul>
                 <div class="clearfix"></div>		
 		        </div>		
@@ -178,7 +173,7 @@
                <label>Show</label>
                   <select>
                             <option value="" selected="selected">
-                    6                </option>
+                    All              </option>
                   </select> per page        
                </div>
        	   </div>

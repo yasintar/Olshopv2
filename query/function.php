@@ -154,14 +154,14 @@
 							$result = mysqli_query($conn, $sql);
 
 							if($result->num_rows != 0){
-								while ($rows = $result->fetch_object()) {
+								$rows = $result->fetch_object();
 									$id = $rows->total;
 									echo "
 										<div align='center'>
 											<h1>$id</h1><br>
 										</div>
 									";
-								}
+								
 							}else{
 								echo "<div align='center'>
 										<h1>Tidak ada pembeli tersebut<h1>

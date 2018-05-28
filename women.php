@@ -206,7 +206,7 @@
 			                </div>
 		                </a>
 						<div class="cbp-vm-details">
-							Women
+							<strong>Stock : </strong> <span><?php echo $product_array[$key]["brg_stok"]; ?></span>
 						</div>
 						<div>
 							<input type="text" name="quantity" value="1" size="2" />

@@ -211,7 +211,7 @@
 			                </div>
 		                </a>
 						<div class="cbp-vm-details">
-							Men
+							Women
 						</div>
 						<div>
 							<input type="text" name="quantity" value="1" size="2" />

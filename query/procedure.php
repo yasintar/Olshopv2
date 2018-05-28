@@ -168,9 +168,9 @@
 
 						include ("../config.php");
 					 
-						$sql = "CALL diskon()";
+						$sqle = "CALL diskon()";
 					 
-						mysqli_query($conn, $sql) or die("Error, query failed!");
+						mysqli_query($conn, $sqle) or die(mysqli_error($conn));
 						#echo "berhasil";
 						echo "<script>
 				             alert('Diskon berhasil diberikan'); 
@@ -214,7 +214,7 @@
 									<td align="center">'.$jlh.'</td>
 									<td align="center">'.$ttl.'</td>
 									<td align="center">'.$tglbeli.'</td>
-									<td align="center">'.$ttlpajak.'</td>
+									<td align="center"><strong>'.$ttlpajak.'</strong></td>
 								</tr>
 							';
 							$no++;

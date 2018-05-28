@@ -166,8 +166,8 @@ if(isset($_SESSION["cart_item"])){
 }
 ?>
 </div>
-
-<div class="col-md-6">
+<br>
+<div>
 	     	<?php
 						include ('config.php');
 
@@ -189,57 +189,17 @@ if(isset($_SESSION["cart_item"])){
 						}
 		?>
 	     </div>
-	     <div class="col-md-6">
-		<?php
-						include ('config.php');
-
-						$sqli = "SELECT * FROM pembeli ORDER BY pbl_id DESC LIMIT 1";
-						$result2 = mysqli_query($conn, $sqli);
-
-						if($result2->num_rows != 0){
-							while ($rows = $result2->fetch_object()) {
-								$id = $rows->pbl_id;
-									echo "
-										<div align='center'>
-											<h3>ID terakhir Pembeli:</h3>
-											<h4>$id</h4>
-										</div>
-										";
-							}
-						}else{
-							echo "tidak ada komentar";
-						}
-		?>
-		</div>
-
-
-		  	  <form method="post" action="reg.php"> 
+	     	<br>	
+		  	  <form method="post" action="regbeli.php"> 
 				 <div class="register-top-grid">
-				 	<?php $item_total; ?>
 					<h3>PERSONAL INFORMATION</h3>
 					<div>
 						<span>Order ID<label>*</label></span>
 						<input type="text" placeholder="ID terakhir + 1" name="odid"> 
 					 </div>
 					 <div>
-						<span>Pembeli ID<label>*</label></span>
-						<input type="text" placeholder="ID terakhir + 1" name="pid"> 
-					 </div>
-					 <div>
 						<span>Nama<label>*</label></span>
 						<input type="text" name="namap"> 
-					 </div>
-					 <div>
-						<span>Alamat<label>*</label></span>
-						<input type="text" name="alamatp"> 
-					 </div>
-					 <div>
-						 <span>Email Address<label>*</label></span>
-						 <input type="text" name="emailp"> 
-					 </div>
-					 <div>
-						<span>No Telepon<label>*</label></span>
-						<input type="text" name="telpp"> 
 					 </div>
 					 <div class="clearfix"> </div>
 					   <a class="news-letter" href="#">

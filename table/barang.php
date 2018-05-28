@@ -159,6 +159,10 @@
 							$harga = $data->brg_harga;
 							$stok = $data->brg_stok;
 							$ket = $data->brg_ket;
+							if($stok < 5){
+								$sqlea = "UPDATE barang set brg_stok = brg_stok+50 where brg_id = '$brgid'";
+								mysqli_query($conn, $sqlea) or die(mysqli_error($conn));
+							}
 							echo '
 								<tr bgcolor="#fff">
 									<td align="center">'.$brgid.'</td>

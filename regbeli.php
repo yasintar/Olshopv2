@@ -36,8 +36,10 @@
     		$it = $item["brg_id"];
     		$it2 = $item["quantity"]; 
 			$sql = "INSERT INTO detail_order VALUES( '".$_POST['odid']."','".$it."','".$it2."')";
+			$sqlyo = "UPDATE barang SET brg_stok = brg_stok-'$it2' where brg_id='$it'";
 
 			mysqli_query($conn, $sql) or die("Error, query failed! 3");
+			mysqli_query($conn, $sqlyo) or die("Error, query failed! 4");
 		}
 
 		echo "berhasil";

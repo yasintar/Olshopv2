@@ -164,10 +164,10 @@ function active_radio_button($value,$input){
 								<span>Status<label>*</label></span>
 								<input type="text" value="<?php echo $row['pbl_status'];?>" name="status"> 
 							</div>
-					  	 </form>
-					  	 	<div class="register-but">
+							<div class="register-but">
 					   			<input type="submit" value="Save" name="simpan">
 					   		</div>
+					  	 </form>
 					<?php
 					include '../config.php';
 // menyimpan data kedalam variabel
@@ -180,13 +180,13 @@ function active_radio_button($value,$input){
 						$status         = $_POST['pbl_status'];
 // query SQL untuk insert data
 						$query = "UPDATE pembeli SET pbl_nama='$nama',pbl_alamat='$alamat',pbl_telp='$notelp',pbl_email='$email',pbl_status='$status' where pbl_id='$idpbl'";
-						mysqli_query($koneksi, $query);
+						mysqli_query($conn, $query);
 // mengalihkan ke halaman index.php
 						header("location:trigger2.php");
 						}
-						else  {
-							die("Gagal menyimpan perubahan...");
-    					}
+						// else  {
+						// 	die("Gagal menyimpan perubahan...");
+    		// 			}
 					?>
 				</div>
 					 <div class="clearfix"> </div>		 	

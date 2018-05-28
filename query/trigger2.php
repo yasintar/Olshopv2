@@ -169,7 +169,7 @@
 											<td align="center">'.$telepon.'</td><br>
 											<td align="center">'.$email.'</td><br>
 											<td align="center">'.$status.'</td><br>
-											<td><a href="edittrig.php">edit</a></td>
+											<td><a href="edittrig.php?idpbl='.$idpbl.'">edit</a></td>
 									</tr>
 									';
 									$no++;

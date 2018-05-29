@@ -240,6 +240,7 @@ table.columns().flatten().each( function ( colIdx ) {
 			   	<br>
 				<div class="dwdcuy">
 				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>Order ID</th>
 						<th>ID Bayar</th>

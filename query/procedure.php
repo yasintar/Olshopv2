@@ -235,7 +235,7 @@ table.columns().flatten().each( function ( colIdx ) {
 				 ?>
 			    </div>
 <br><br><br>
-			   <h3 align="center"</h3>
+			   <h3 align="center"></h3>
 				<div class="dwdcuy">
 				<table align="center" id="tabelid">
 					<thead>

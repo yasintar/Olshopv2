@@ -126,7 +126,8 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">BARANG</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelx">
+					<thead>
 					<tr>
 						<th>ID Barang</th>
 						<th>ID Kategori</th>
@@ -160,7 +161,7 @@
 <script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
 <script>
 $(document).ready( function () {
-    $('#tabelid').DataTable({
+    $('#tabelx').DataTable({
     	"bProcessing": true,
     	"sPaginationType": "full_numbers",
     	"sAjaxSource": "brg.php",

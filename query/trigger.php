@@ -18,6 +18,7 @@
 <meta name="keywords" content="Rona Clothing" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -166,7 +167,8 @@
 					<div class="login-right">
 					  	 <h3>Tabel Log Order Barang</h3>
 					  	 <div class="dwdcuy">
-					  	 <table align="center">
+					  	 <table align="center" id="tabelid">
+					  	<thead>
 						<tr>
 							<th>Order ID</th>
 							<th>ID Bayar</th>
@@ -178,46 +180,16 @@
 							<th>Timestamps</th>
 							<th>Status</th>
 						</tr>
-						<?php
-							include('../config.php');
-							$sql = "SELECT * FROM log_order";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								$no = 1;
-								while($data = $res->fetch_object()){
-									$odid = $data->od_id;
-									$byrid = $data->byr_id;
-									$pblid = $data->pbl_id;
-									$jlh = $data->od_jumlah;
-									$ttl = $data->od_total;
-									$tgl = $data->od_tglbeli;
-									$ttlpjk = $data->od_total_pjk;
-									$dat = $data->timestamps;
-									$stat = $data->status_ubah;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid.'</td>
-										<td align="center">'.$byrid.'</td>
-										<td align="center">'.$pblid.'</td>
-										<td align="center">'.$jlh.'</td>
-										<td align="center">'.$ttl.'</td>
-										<td align="center">'.$tgl.'</td>
-										<td align="center">'.$ttlpjk.'</td>
-										<td align="center">'.$dat.'</td>
-										<td align="center">'.$stat.'</td>
-									</tr>
-									';
-									$no++;
-								}				
-						?>
+						</thead>
+						
 					</table>
 					</div>
 					   </div>
 					   <div class="login-right">
 					  	 <h3>Tabel Log Detail Order</h3>
 					  	 <div class="dwdcuy">
-						 <table align="center">
+						 <table align="center" id="tabel2">
+						 	<thead>
 						<tr>
 							<th>Order ID</th>
 							<th>ID Barang</th>
@@ -225,32 +197,10 @@
 							<th>Timestamps</th>
 							<th>Status</th>
 						</tr>
-						<?php
-							include('../config.php');
-							$sqle = "SELECT * FROM log_order_detail";
-							$res = mysqli_query($conn, $sqle);
-
-							//if(mysqli_num_rows($sql) > 0){
-								//$no = 1;
-								while($datax = $res->fetch_object()){
-									$odid2 = $datax->od_id;
-									$brgid = $datax->brg_id;
-									$jlh2 = $datax->jumlah;
-									$tm = $datax->timestamps;
-									$stat = $datax->status_ubah;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid2.'</td>
-										<td align="center">'.$brgid.'</td>
-										<td align="center">'.$jlh2.'</td>
-										<td align="center">'.$tm.'</td>
-										<td align="center">'.$stat.'</td>
-									</tr>
-									';
-									//$no++;
-								}				
-						?>
+						</thead>
+						
 					</table>
+					<br><br>
 					</div>
 					    </div>
 					    <div class="clearfix"> </div>		 	
@@ -270,5 +220,45 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "tg1a.php",
+    	"aoColumns": [
+	        { mData: 'od_id' },
+	        { mData: 'byr_id' },
+	        { mData: 'pbl_id' },
+	        { mData: 'od_jumlah' },
+	        { mData: 'od_total' },
+	        { mData: 'od_tglbeli' },
+	        { mData: 'od_total_pjk' },
+	        { mData: 'timestamps' },
+	        { mData: 'status_ubah' }
+	    ]
+    });
+} );
+</script>
+
+<script>
+$(document).ready( function () {
+    $('#tabel2').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "tg1b.php",
+    	"aoColumns": [
+	        { mData: 'od_id' },
+	        { mData: 'brg_id' },
+	        { mData: 'jumlah' },
+	        { mData: 'timestamps' },
+	        { mData: 'status_ubah' }
+	    ]
+    });
+} );
+</script>
+
 </body>
 </html>

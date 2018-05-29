@@ -18,6 +18,7 @@
 <meta name="keywords" content="Rona Clothing" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -135,7 +136,8 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			   	<div class="row login-right">
+			   	<br>
+			   	<div class="login-right">
 			   		<h3>TRIGGER (update data pembeli di tabel pembeli)</h3>
 						<form method="post" action="trigger2.php">
 					  	 	<div>
@@ -181,10 +183,11 @@
 				</div>
 					    <div class="clearfix"> </div>
 					    <div class="row">
-					<div class="col-md-6 login-left">
+					<div class="login-left">
 					  	 <h3 align="center">Tabel Log</h3>
 					  	 <div class="dwdcuy">
-					  	 <table align="center">
+					  	 <table align="center" id="tabelid">
+					  	 	<thead>
 						<tr>
 							<th>ID Pembeli</th>
 							<th>Nama</th>
@@ -195,33 +198,8 @@
 							<th>Tanggal Perubahan</th>
 							<th>Status Perubahan</th>
 						</tr>
-						<?php
-							include('../config.php');
-							$sql = "SELECT * FROM log_pembeli";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								$no = 1;
-								while($data2 = $res->fetch_object()){
-									$idpbl2 = $data2->pbl_id;
-									$nama2 = $data2->pbl_nama;
-									$alamat2 = $data2->pbl_alamat;
-									$telepon2 = $data2->pbl_telp;
-									$email2 = $data2->pbl_email;
-									$status2 = $data2->pbl_status;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$idpbl2.'</td>
-										<td align="center">'.$nama2.'</td>
-										<td align="center">'.$alamat2.'</td>
-										<td align="center">'.$telepon2.'</td>
-										<td align="center">'.$email2.'</td>
-										<td align="center">'.$status2.'</td>
-									</tr>
-									';
-									$no++;
-								}				
-						?>
+						</thead>
+						
 					</table>
 					</div>
 					   </div>		 	
@@ -241,5 +219,27 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "tg2.php",
+    	"aoColumns": [
+	        { mData: 'pbl_id' },
+	        { mData: 'pbl_nama' },
+	        { mData: 'pbl_alamat' },
+	        { mData: 'pbl_telp' },
+	        { mData: 'pbl_email' },
+	        { mData: 'pbl_status' },
+	        { mData: 'tgl_ubah' },
+	        { mData: 'status_ubah' }
+	    ]
+    });
+} );
+</script>
+
 </body>
 </html>

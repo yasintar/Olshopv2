@@ -169,20 +169,20 @@ function active_radio_button($value,$input){
 					   		</div>
 					  	 </form>
 					<?php
-					include '../config.php';
+					include ('../config.php');
 // menyimpan data kedalam variabel
 					if(isset($_POST['simpan'])){
-						$idpbl   		= $_POST['pbl_id'];
-						$nama           = $_POST['pbl_nama'];
-						$alamat         = $_POST['pbl_alamat'];
-						$notelp  	    = $_POST['pbl_telp'];
-						$email  = $_POST['pbl_email'];
-						$status         = $_POST['pbl_status'];
+						$idpbl   		= $_POST['idpbl'];
+						$nama           = $_POST['nama'];
+						$alamat         = $_POST['alamat'];
+						$notelp  	    = $_POST['telepon'];
+						$email  		= $_POST['email'];
+						$status         = $_POST['status'];
 // query SQL untuk insert data
-						$query = "UPDATE pembeli SET pbl_nama='$nama',pbl_alamat='$alamat',pbl_telp='$notelp',pbl_email='$email',pbl_status='$status' where pbl_id='$idpbl'";
-						mysqli_query($conn, $query);
+						$query = "UPDATE pembeli SET pbl_nama='$nama', pbl_alamat='$alamat', pbl_telp='$notelp',pbl_email='$email', pbl_status='$status' WHERE pbl_id=$idpbl";
+						mysqli_query($conn, $query) or die(mysqli_error($conn));
 // mengalihkan ke halaman index.php
-						header("location:trigger2.php");
+						//header("location: trigger2.php");
 						}
 						// else  {
 						// 	die("Gagal menyimpan perubahan...");

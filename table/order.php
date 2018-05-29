@@ -19,6 +19,7 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
@@ -137,7 +138,8 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">ORDER</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>ID Order</th>
 						<th>ID Bayar</th>
@@ -147,35 +149,8 @@
 						<th>Tanggal Beli</th>
 						<th>Total Pajak</th>
 					</tr>
-					<?php
-							include('../config.php');
-							$sql = "SELECT * FROM order_brg order by od_id";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								$no = 1;
-								while($data = $res->fetch_object()){
-									$odid = $data->od_id;
-									$byrid = $data->byr_id;
-									$pblid = $data->pbl_id;
-									$jlh = $data->od_jumlah;
-									$ttl = $data->od_total;
-									$tgl = $data->od_tglbeli;
-									$ttlpjk = $data->od_total_pjk;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid.'</td>
-										<td align="center">'.$byrid.'</td>
-										<td align="center">'.$pblid.'</td>
-										<td align="center">'.$jlh.'</td>
-										<td align="center">'.$ttl.'</td>
-										<td align="center">'.$tgl.'</td>
-										<td align="center">'.$ttlpjk.'</td>
-									</tr>
-									';
-									$no++;
-								}				
-						?>
+					</thead>
+					
 				</table>
 				</div>
 			   <div class="clearfix"> </div>
@@ -193,5 +168,25 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "od.php",
+    	"aoColumns": [
+	        { mData: 'od_id' },
+	        { mData: 'byr_id' },
+	        { mData: 'pbl_id' },
+	        { mData: 'od_jumlah' },
+	        { mData: 'od_total' },
+	        { mData: 'od_tglbeli' },
+	        { mData: 'od_total_pjk' }
+	    ]
+    });
+} );
+</script>
 </body>
 </html>

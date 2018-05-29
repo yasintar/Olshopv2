@@ -140,11 +140,13 @@
 			   			<h3 align="center">BAYAR</h3>
 						 <div class="dwdcuy">
 						<table align="center">
+							<thead>
 							<tr>
 								<th>ID Bayar</th>
 								<th>Bank</th>
 								<th>No Rekening</th>
 							</tr>
+							</thead>
 							<?php
 								include('../config.php');
 								$sql = "SELECT * FROM bayar";

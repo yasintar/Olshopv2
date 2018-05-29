@@ -158,7 +158,7 @@
 									$id = $rows->total;
 									echo "
 										<div align='center'>
-											<h1>$id</h1><br>
+											<h1>Rp $id</h1><br>
 										</div>
 									";
 								
@@ -196,7 +196,7 @@
 									$id = $rows->jml_terjual;
 									echo "
 										<div align='center'>
-											<h1>$id</h1><br>
+											<h1>$id buah</h1><br>
 										</div>
 									";
 								}

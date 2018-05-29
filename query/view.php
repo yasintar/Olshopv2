@@ -18,6 +18,7 @@
 <meta name="keywords" content="Rona Clothing" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -136,7 +137,7 @@
                 <div class="clearfix"></div>
 			   </div>
 			   <div class="account_grid">
-			    <div class="col-md-6 login-left">
+			    <div class="login-left">
 			  	 <h3>VIEW (barang belum terjual)</h3>
 				 <?php
 				 	include ('../config.php');
@@ -151,12 +152,16 @@
 							$nama = $rows->brg_nama;
 							$harga = $rows->brg_harga;
 								echo "
-									<div align='center'>
+								<div class='row' align='center'>
+									<div class='col-md-4'>
 										<img src='../images/$id.jpg'>
+									</div>
+									<div class='col-md-4'>
 										<h4>$nama</h4><br>
 										<h5>$id - $ktg</h5>
 										<h5>Rp $harga</h5><br>
 									</div>
+								</div>
 									";
 						}
 					}else{
@@ -164,43 +169,22 @@
 					}
 				 	
 				 ?>
-			    </div>
 
-			   <div class="col-md-6 login-right">
+			    </div>
+			    <br><br>
+			   <div class="login-right">
+			   	<br>
 				<h3>VIEW (barang terjual)</h3>
 				<div class="dwdcuy">
-				 <table align="center">
+				 <table align="center" id="tabelid">
+				 	<thead>
 						<tr>
-							<th>No</th>
 							<th>ID barang</th>
 							<th>Nama barang</th>
 							<th>Jumlah dibeli</th>
-							<th>Foto Barang</th>
 						</tr>
-						<?php
-							include('../config.php');
-							$sql = "SELECT * FROM vibarang";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								$no = 1;
-								while($rows = $res->fetch_object()){
-									$id = $rows->brg_id;
-									$nama = $rows->brg_nama;
-									$jlh = $rows->jumlah_terjual;
-									echo '
-									<tr bgcolor="#fff" class="poto">
-										<td>'.$no.'</td>
-										<td align="center">'.$id.'</td>
-										<td align="center">'.$nama.'</td>
-										<td align="center">'.$jlh.'</td>
-										<td align="center"><img src="../images/'.$id.'.jpg"></td>
-									</tr>
-									';
-
-									$no++;
-								}				
-						?>
+						</thead>
+						
 					</table>
 					</div>
 			   </div>	
@@ -219,5 +203,22 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "vw.php",
+    	"aoColumns": [
+	        { mData: 'brg_id' },
+	        { mData: 'brg_nama' },
+	        { mData: 'jumlah_terjual' }
+	    ]
+    });
+} );
+</script>
+
 </body>
 </html>

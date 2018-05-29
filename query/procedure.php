@@ -18,6 +18,8 @@
 <meta name="keywords" content="Rona Clothing" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
@@ -157,6 +159,7 @@
 					}
 				 ?>
 				</div>
+				
 				 <div class="col-md-6 login-right">
 			  	 <h3>PROCEDURE (Diskon 5% periode belanja 10-16 Mei 2018 khusus pelanggan)</h3>
 			  	 <h5>Klik untuk meng-apply pajak</h5>
@@ -179,10 +182,11 @@
 					}
 				 ?>
 			    </div>
-<br>
-			   <h3 align="center">Tabel Order Barang</h3>
+<br><br><br>
+			   <h3 align="center"</h3>
 				<div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>Order ID</th>
 						<th>ID Bayar</th>
@@ -192,34 +196,8 @@
 						<th>Tanggal Transaksi</th>
 						<th>Harga + PPN</th>
 					</tr>
-					<?php
-						include('../config.php');
-						$sql = "SELECT * FROM order_brg order by od_id";
-						$res = mysqli_query($conn, $sql);
-						//if(mysqli_num_rows($sql) > 0){
-						$no = 1;
-						while($data = $res->fetch_object()){
-							$odid = $data->od_id;
-							$byrid = $data->byr_id;
-							$pblid = $data->pbl_id;
-							$jlh = $data->od_jumlah;
-							$ttl = $data->od_total;
-							$tglbeli = $data->od_tglbeli;
-							$ttlpajak = $data->od_total_pjk;
-							echo '
-								<tr bgcolor="#fff">
-									<td align="center">'.$odid.'</td>
-									<td align="center">'.$byrid.'</td>
-									<td align="center">'.$pblid.'</td>
-									<td align="center">'.$jlh.'</td>
-									<td align="center">'.$ttl.'</td>
-									<td align="center">'.$tglbeli.'</td>
-									<td align="center"><strong>'.$ttlpajak.'</strong></td>
-								</tr>
-							';
-							$no++;
-						}				
-					?>
+					</thead>
+					
 				</table>
 				</div>
 			   </div>
@@ -241,5 +219,24 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "proc.php",
+    	"aoColumns": [
+	        { mData: 'od_id' },
+	        { mData: 'byr_id' },
+	        { mData: 'pbl_id' },
+	        { mData: 'od_jumlah' },
+	        { mData: 'od_total' },
+	        { mData: 'od_tglbeli' },
+	        { mData: 'od_total_pjk' }
+	    ]
+    });
+} );
+</script>
 </body>
 </html>

@@ -19,6 +19,7 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <script src="../js/jquery.min.js"></script>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
@@ -137,7 +138,8 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">PEMBELI</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>ID Pembeli</th>
 						<th>Nama</th>
@@ -146,32 +148,8 @@
 						<th>Email</th>
 						<th>Status</th>
 					</tr>
-					<?php
-						include('../config.php');
-						$sql = "SELECT * FROM pembeli";
-						$res = mysqli_query($conn, $sql);
-						//if(mysqli_num_rows($sql) > 0){
-						$no = 1;
-						while($data = $res->fetch_object()){
-							$id = $data->pbl_id;
-							$nama = $data->pbl_nama;
-							$alamat = $data->pbl_alamat;
-							$telp = $data->pbl_telp;
-							$email = $data->pbl_email;
-							$stat = $data->pbl_status;
-							echo '
-								<tr bgcolor="#fff">
-									<td align="center">'.$id.'</td>
-									<td align="center">'.$nama.'</td>
-									<td align="center">'.$alamat.'</td>
-									<td align="center">'.$telp.'</td>
-									<td align="center">'.$email.'</td>
-									<td align="center">'.$stat.'</td>
-								</tr>
-							';
-							$no++;
-						}				
-					?>
+					</thead>
+					
 				</table>
 				</div>
 			   <div class="clearfix"> </div>
@@ -189,5 +167,25 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "pbl.php",
+    	"aoColumns": [
+	        { mData: 'pbl_id' },
+	        { mData: 'pbl_nama' },
+	        { mData: 'pbl_alamat' },
+	        { mData: 'pbl_telp' },
+	        { mData: 'pbl_email' },
+	        { mData: 'pbl_status' }
+	    ]
+    });
+} );
+</script>
+
 </body>
 </html>

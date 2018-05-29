@@ -25,27 +25,17 @@
 <link href="../css/utama.css" rel='stylesheet' type='text/css' />
 <!-- Custom Theme files -->
 <!--webfont-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
+
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
 <!--//webfont-->
 <script src="../js/jquery.easydropdown.js"></script>
+<script src="../js/utama.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
-<script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+ 
+
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
-		<script>
-			$(document).ready(function() {
-				$('.popup-with-zoom-anim').magnificPopup({
-					type: 'inline',
-					fixedContentPos: false,
-					fixedBgPos: true,
-					overflowY: 'auto',
-					closeBtnInside: true,
-					preloader: false,
-					midClick: true,
-					removalDelay: 300,
-					mainClass: 'my-mfp-zoom-in'
-			});
-		});
-		</script>
+		
 <!----details-product-slider--->
 </head>
 <body>
@@ -137,7 +127,8 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">BARANG</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>ID Barang</th>
 						<th>ID Kategori</th>
@@ -146,36 +137,7 @@
 						<th>Stok</th>
 						<th>Keterangan</th>
 					</tr>
-					<?php
-						include('../config.php');
-						$sql = "SELECT * FROM barang";
-						$res = mysqli_query($conn, $sql);
-						//if(mysqli_num_rows($sql) > 0){
-						$no = 1;
-						while($data = $res->fetch_object()){
-							$brgid = $data->brg_id;
-							$ktgid = $data->ktg_id;
-							$nama = $data->brg_nama;
-							$harga = $data->brg_harga;
-							$stok = $data->brg_stok;
-							$ket = $data->brg_ket;
-							if($stok < 5){
-								$sqlea = "UPDATE barang set brg_stok = brg_stok+50 where brg_id = '$brgid'";
-								mysqli_query($conn, $sqlea) or die(mysqli_error($conn));
-							}
-							echo '
-								<tr bgcolor="#fff">
-									<td align="center">'.$brgid.'</td>
-									<td align="center">'.$ktgid.'</td>
-									<td align="center">'.$nama.'</td>
-									<td align="center">'.$harga.'</td>
-									<td align="center">'.$stok.'</td>
-									<td align="center">'.$ket.'</td>
-								</tr>
-							';
-							$no++;
-						}				
-					?>
+				</thead>
 				</table>
 				</div>
 			   <div class="clearfix"> </div>
@@ -193,5 +155,42 @@
 			</div>
 		</div>
 	</div>
+
+
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "brg.php",
+    	"aoColumns": [
+	        { mData: 'brg_id' },
+	        { mData: 'ktg_id' },
+	        { mData: 'brg_nama' },
+	        { mData: 'brg_harga' },
+	        { mData: 'brg_stok' },
+	        { mData: 'brg_ket' }
+	    ]
+    });
+} );
+</script>
+<script>
+			$(document).ready(function() {
+				$('.popup-with-zoom-anim').magnificPopup({
+					type: 'inline',
+					fixedContentPos: false,
+					fixedBgPos: true,
+					overflowY: 'auto',
+					closeBtnInside: true,
+					preloader: false,
+					midClick: true,
+					removalDelay: 300,
+					mainClass: 'my-mfp-zoom-in'
+			});
+		});
+		</script>
 </body>
 </html>

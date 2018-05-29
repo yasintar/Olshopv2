@@ -20,6 +20,7 @@
 <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="../js/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.css"/>
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../css/utama.css" rel='stylesheet' type='text/css' />
@@ -137,33 +138,14 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">DETAIL ORDER</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table align="center" id="tabelid">
+					<thead>
 					<tr>
 						<th>ID Order</th>
 						<th>ID Barang</th>
 						<th>Jumlah</th>
 					</tr>
-					<?php
-							include('../config.php');
-							$sql = "SELECT * FROM detail_order";
-							$res = mysqli_query($conn, $sql);
-
-							//if(mysqli_num_rows($sql) > 0){
-								//$no = 1;
-								while($data2 = $res->fetch_object()){
-									$odid2 = $data2->od_id;
-									$brgid = $data2->brg_id;
-									$jlh2 = $data2->jumlah;
-									echo '
-									<tr bgcolor="#fff">
-										<td align="center">'.$odid2.'</td>
-										<td align="center">'.$brgid.'</td>
-										<td align="center">'.$jlh2.'</td>
-									</tr>
-									';
-									//$no++;
-								}				
-						?>
+					</thead>
 				</table>
 				</div>
 			   <div class="clearfix"> </div>
@@ -181,5 +163,22 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/datatables.min.js"></script>
+<script>
+$(document).ready( function () {
+    $('#tabelid').DataTable({
+    	"bProcessing": true,
+    	"sPaginationType": "full_numbers",
+    	"sAjaxSource": "dtl.php",
+    	"aoColumns": [
+	        { mData: 'od_id' },
+	        { mData: 'brg_id' },
+	        { mData: 'jumlah' }
+	    ]
+    });
+} );
+</script>
+
 </body>
 </html>

@@ -101,7 +101,7 @@
 		  				<h3>Welcome to </br>R O N A</h3> <br>
 		  			</div>
 	   		 	</div>
-	   		 	<div class="banner_right">
+	   		 	<div class="banner_right anim-typewriter">
 	   		 		<h1>R O N A <br>c l o t h i n g</h1>
 	   		 		<p>we lead the way to be fashionista!</p>
 	   		 	</div>

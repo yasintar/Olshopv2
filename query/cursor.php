@@ -185,7 +185,7 @@
 			   	<h3 align="center">Tabel Order Barang</h3>
 			   	<br>
 				<div class="dwdcuy">
-				<table align="center">
+				<table class="table table-hover" align="center">
 					<tr>
 						<th>Order ID</th>
 						<th>ID Bayar</th>

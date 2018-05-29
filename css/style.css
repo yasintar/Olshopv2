@@ -107,6 +107,7 @@ ul.social li a i.instagram{
 .bannertop_box{
 	width:23%;
 	float:left;
+
 }
 ul.login{
 	padding: 5px 30px;
@@ -128,6 +129,11 @@ ul.login li.wish{
 .cart_bg{
 	background:#ffd001;
 	padding:0.5em 1em;
+	border-radius:10px;
+  border: 0px solid #ccc; 
+}
+.cart_bg:hover{
+	box-shadow: 0 0 30px rgba(33,33,33,.2);
 }
 ul.cart p {
   margin: 6px 0 0 0;
@@ -243,9 +249,9 @@ ul.quick_access li.check{
 	padding:5em 1.4em;
 	margin-top:10px;
 	border: none;
-  color: white;
-  opacity: 0.6;
-  transition: 0.3s;
+  	color: white;
+  	opacity: 0.6;
+  	transition: 0.3s;
 }
 
 .welcome_box:hover{
@@ -275,12 +281,34 @@ ul.quick_access li.check{
     text-transform: capitalize;
     line-height: 1.2em;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+   animation-iteration-count: infinite;
 }
 .banner_right p {
   color: #fff;
   font-size: 1.2em;
   line-height: 1.8em;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+   animation-iteration-count: infinite;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }
 .banner_btn {
 	display: inline-block;
@@ -533,7 +561,7 @@ ul.nav li a:hover{
   text-align: center;
   
 }
-.side_banner .banner_holder h3{
+.side_banner .banner_holder h3:hover{
   font-size: 45px;
   font-weight: 400;
   color: #fff;
@@ -623,8 +651,18 @@ ul.article_links li a {
 	background: #fff;
 	position: relative;
 }
-.product_image {
+.product_image{
 	border:10px solid #fff;
+}
+
+.product_image .img-responsive{
+	transition: 1s ease;
+}
+.product_image .img-responsive:hover{
+	-webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
 }
 .sale-box1{
 	position: absolute;
@@ -714,6 +752,18 @@ ul.instagram_grid li{
 ul.instagram_grid li img{
 	border:8px solid #fff;
 }
+
+.popup-with-zoom-anim .img-responsive{
+	transition: 1s ease;
+}
+
+.popup-with-zoom-anim .img-responsive:hover{
+	-webkit-transform: scale(0.8);
+-ms-transform: scale(0.8);
+transform: scale(0.8);
+transition: 1s ease;
+}
+
 ul.instagram_grid li.last_instagram{
 	margin:0;
 }			
@@ -2450,6 +2500,7 @@ h3.typo-title {
 .container {
   padding:0 10px;
   background: rgba(0, 0, 0, 0.5);
+
 }
 .copy {
   text-align: center;
@@ -2504,6 +2555,7 @@ ul.social {
 }
 .bannertop_box {
   width:48%;
+
 }
 .banner_right p {
   display: none;
@@ -2670,7 +2722,9 @@ p.comment-form-author {
 .bannertop_box {
   width: 100%;
   float: none;
-    margin-top: 2em;
+  margin-top: 2em;
+
+
 }
 ul.brand_icons {
   text-align: center;
@@ -2702,6 +2756,9 @@ h3.quick {
   text-align: center;
   margin: 1em 0;
 }
+
+
+
 .side_banner .banner_holder h3 {
   font-size: 18px;
   line-height: 26px;
@@ -2924,3 +2981,13 @@ ul.list1 a {
   font-size: 0.9em;
 }
 }
+.picthehe{
+  transition: 1s ease;
+}
+.picthehe:hover{
+  -webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+}
+

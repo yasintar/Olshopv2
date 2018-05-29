@@ -201,7 +201,7 @@
 					<div class="col-md-4 simpleCart_shelfItem">
 						<a class="cbp-vm-image">
 							<div class="inner_content clearfix">
-								<div class="product_image">
+								<div class="product_image picthehe">
 									<img src="images/<?php echo $product_array[$key]["brg_id"];?>.jpg">
 									<div class="product_container">
 									   <div class="cart-left">

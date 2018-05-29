@@ -4,12 +4,6 @@ $idpbl      = $_GET['idpbl'];
 $sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
 $res  		= mysqli_query($conn, $sql);
 $row        = mysqli_fetch_array($res);
-// membuat function untuk set aktif radio button
-function active_radio_button($value,$input){
-    // apabilan value dari radio sama dengan yang di input
-    $result =  $value==$input?'checked':'';
-    return $result;
-	}
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -179,7 +173,7 @@ function active_radio_button($value,$input){
 						$email  		= $_POST['email'];
 						$status         = $_POST['status'];
 // query SQL untuk insert data
-						$query = "UPDATE pembeli SET pbl_nama='$nama', pbl_alamat='$alamat', pbl_telp='$notelp',pbl_email='$email', pbl_status='$status' WHERE pbl_id=$idpbl";
+						$query = "UPDATE pembeli SET nama='$nama', alamat='$alamat', telepon='$notelp',email='$email', ='$status' WHERE pbl_id=$idpbl";
 						mysqli_query($conn, $query) or die(mysqli_error($conn));
 // mengalihkan ke halaman index.php
 						//header("location: trigger2.php");

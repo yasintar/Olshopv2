@@ -1,7 +1,8 @@
 <?php
 							include('../config.php');
-							$sql = "SELECT * FROM log_pembeli";
-							$res = mysqli_query($conn, $sql);
+								if(isset($_GET['simpan'])){
+								$sql = "SELECT * FROM log_pembeli";
+								$res = mysqli_query($conn, $sql);}
 
 							//if(mysqli_num_rows($sql) > 0){
 								$no = 1;

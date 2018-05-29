@@ -23,6 +23,7 @@
 <!-- Custom Theme files -->
 <link href="../css/style.css" rel='stylesheet' type='text/css' />
 <link href="../css/utama.css" rel='stylesheet' type='text/css' />
+
 <!-- Custom Theme files -->
 <!--webfont-->
 <link href='//fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
@@ -30,6 +31,57 @@
 <script src="../js/jquery.easydropdown.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
 <script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="../js/dataTables.semanticui.js" type="text/javascript"></script>
+<script src="../js/dataTables.semanticui.min.js" type="text/javascript"></script>
+<script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
+<link href="../css/dataTables.semanticui.css" rel='stylesheet' type='text/css' />
+<link href="../css/dataTables.semanticui.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/dataTables.bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+<script>
+		$(document).ready( function () {
+   			 $('#table_id').DataTable();
+		} );
+</script>
+<script>
+	$('#table_id').DataTable( {
+    	paging: true
+	} );
+</script>
+<script>
+	$( selector ).DataTable();
+	$( selector ).dataTable().api();
+	new $.fn.dataTable.Api( selector );
+</script>
+<script>
+	var table = $('#table_id').DataTable();
+ 
+table.columns().flatten().each( function ( colIdx ) {
+    // Create the select list and search operation
+    var select = $('<select />')
+        .appendTo(
+            table.column(colIdx).footer()
+        )
+        .on( 'change', function () {
+            table
+                .column( colIdx )
+                .search( $(this).val() )
+                .draw();
+        } );
+ 
+    // Get the search data for the first column and add to the select list
+    table
+        .column( colIdx )
+        .cache( 'search' )
+        .sort()
+        .unique()
+        .each( function ( d ) {
+            select.append( $('<option value="'+d+'">'+d+'</option>') );
+        } );
+} );
+</script>
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
 		<script>
 			$(document).ready(function() {
@@ -137,7 +189,7 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">PEMBELI</h3>
 				 <div class="dwdcuy">
-				<table align="center">
+				<table id="table_id" class="display" align="center">
 					<tr>
 						<th>ID Pembeli</th>
 						<th>Nama</th>

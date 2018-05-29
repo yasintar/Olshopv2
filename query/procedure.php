@@ -30,6 +30,58 @@
 <script src="../js/jquery.easydropdown.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
 <script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="../js/dataTables.semanticui.js" type="text/javascript"></script>
+<script src="../js/dataTables.semanticui.min.js" type="text/javascript"></script>
+<script src="../js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="../js/dataTables.bootstrap.js" type="text/javascript"></script>
+<script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
+<link href="../css/dataTables.semanticui.css" rel='stylesheet' type='text/css' />
+<link href="../css/dataTables.semanticui.min.css" rel='stylesheet' type='text/css' />
+<link href="../css/dataTables.bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css' />
+<script>
+		$(document).ready( function () {
+   			 $('#table_id').DataTable();
+		} );
+</script>
+<script>
+	$('#table_id').DataTable( {
+    	paging: true
+	} );
+</script>
+<script>
+	$( selector ).DataTable();
+	$( selector ).dataTable().api();
+	new $.fn.dataTable.Api( selector );
+</script>
+<script>
+	var table = $('#table_id').DataTable();
+ 
+table.columns().flatten().each( function ( colIdx ) {
+    // Create the select list and search operation
+    var select = $('<select />')
+        .appendTo(
+            table.column(colIdx).footer()
+        )
+        .on( 'change', function () {
+            table
+                .column( colIdx )
+                .search( $(this).val() )
+                .draw();
+        } );
+ 
+    // Get the search data for the first column and add to the select list
+    table
+        .column( colIdx )
+        .cache( 'search' )
+        .sort()
+        .unique()
+        .each( function ( d ) {
+            select.append( $('<option value="'+d+'">'+d+'</option>') );
+        } );
+} );
+</script>
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
 		<script>
 			$(document).ready(function() {
@@ -182,7 +234,7 @@
 <br>
 			   <h3 align="center">Tabel Order Barang</h3>
 				<div class="dwdcuy">
-				<table class="table table-hover" align="center">
+				<table id="table_id" class="display" class="table table-hover" align="center">
 					<tr>
 						<th>Order ID</th>
 						<th>ID Bayar</th>

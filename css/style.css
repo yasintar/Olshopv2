@@ -255,13 +255,8 @@ ul.quick_access li.check{
   animation-fill-mode: both;
   -webkit-animation-name: bounceInUp;
   animation-name: bounceInUp;
-  animation-iteration-count: infinite;
-  	
-}
-
-.welcome_box.infinite{
-	  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
+  	-webkit-animation-iteration-count: 1;
 }
 
 @-webkit-keyframes bounceInUp {

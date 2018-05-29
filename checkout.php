@@ -167,7 +167,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>		
 
 		 <div class="col-md-3 col-lg-3 cart-total">
-			 <a class="continue" href="beli.php">Sudah pernah belanja?<br>Klik Di sini </a>
+			 <a class="continue" href="beli.php">Sudah pernah belanja?<br>Klik di Sini </a>
 			 <h3 class="menu_head">Menu</h3>
 				<ul class="nav">
 					<li><a href="women.php">Women</a></li>

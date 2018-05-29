@@ -32,8 +32,7 @@
 <script src="../js/jquery.easydropdown.js"></script>
 <script src="../js/utama.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
- 
-
+<script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
 		
 <!----details-product-slider--->
@@ -127,8 +126,7 @@
 			   <div class="account_grid login-left">
 			  	 <h3 align="center">BARANG</h3>
 				 <div class="dwdcuy">
-				<table align="center" id="tabelid">
-					<thead>
+				<table align="center">
 					<tr>
 						<th>ID Barang</th>
 						<th>ID Kategori</th>

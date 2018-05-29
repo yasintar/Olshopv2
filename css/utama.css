@@ -17,19 +17,44 @@
 
 .oldata{
 	text-align: center;
-	background-color: #ffe6ff;
+	background-color:  #C0C0C0;
 }
 .oldata a{
 	text-decoration: none;
-	color: #00aaff;
+	color:  #000000;
 }
 
-.poto img{
-  height: 190px;
-  width: 160px;
+.oldata:hover {
+     background-color: rgba(0,0,0,0);
+     color:   #C0C0C0;
+     box-shadow: inset 0 0 0 3px  #C0C0C0;
+}
+
+.oldata:hover, 
+.oldata:focus {
+  animation: oldata 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes oldata {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
 }
 
 .picthehe img{
   height: 290px;
   width: 220px;
 }
+
+.inner_content .product_image .picthehe{
+  transition: 1s ease;
+}
+.inner_content .product_image .picthehe:hover{
+  -webkit-transform: scale(1.2);
+-ms-transform: scale(1.2);
+transform: scale(1.2);
+transition: 1s ease;
+}
+
+.poto img{
+height: 190px;
+width: 160px;}

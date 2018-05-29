@@ -31,6 +31,13 @@
 <script src="../js/jquery.easydropdown.js"></script>
 <!-- Add fancyBox main JS and CSS files -->
 <script src="../js/jquery.magnific-popup.js" type="text/javascript"></script>
+<script src="../js/jquery.dataTables.min.js"></script>
+<link href="../css/jquery.dataTables.min.css" rel='stylesheet' type='text/css'>
+	<script>
+		$(document).ready( function () {
+    		$('#table_id').DataTable();
+		} );
+	</script>
 <link href="../css/magnific-popup.css" rel="stylesheet" type="text/css">
 		<script>
 			$(document).ready(function() {

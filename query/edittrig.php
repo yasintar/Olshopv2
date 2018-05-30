@@ -134,7 +134,7 @@ include ('../config.php');
                     </li>
                 </ul>
                 <ul class="previous">
-                	<li><a href="../indexadmin.php">Back to Previous Page</a></li>
+                	<li><a href="trigger2.php">Back to Previous Page</a></li>
                 </ul>
                 <div class="clearfix"></div>
 			   </div>

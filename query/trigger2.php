@@ -168,7 +168,6 @@
 										<tr bgcolor="#fff">
 											<td align="center">'.$idpbl.'</td><br>
 											<td align="center">'.$nama.'</td><br>
-											<td align="center">'.$alamat.'</td><br>
 											<td align="center">'.$telepon.'</td><br>
 											<td align="center">'.$email.'</td><br>
 											<td align="center">'.$status.'</td><br>

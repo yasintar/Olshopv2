@@ -1,10 +1,12 @@
 <?php
 include '../config.php';
-$idpbl      = $_GET['idpbl'];
-$sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
-$res  		= mysqli_query($conn, $sql);
-$row        = mysqli_fetch_array($res);
+	$idpbl      = $_GET['idpbl'];
+	$sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
+	$res  		= mysqli_query($conn, $sql);
+	$data        = mysqli_fetch_array($res);
 ?>
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -133,55 +135,50 @@ $row        = mysqli_fetch_array($res);
 			   <div class="account_grid">
 			   	<div class="row login-right">
 			   		<h3>TRIGGER (update data pembeli di tabel pembeli)</h3>
-						<form method="post" action="trigger2.php">
+						<form method="post" name="form1" action="edittrig.php">
 					  	 	<div>
 								<span>ID Pembeli<label>*</label></span>
-								<input type="hidden" value="<?php echo $row['pbl_id'];?>" name="idpbl"> 
+								<input type="hidden" name="idpbl" value="<?php echo $data['pbl_id'];?>" /> 
 							</div>
 							<div>
 								<span>Nama<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_nama'];?>" name="nama"> 
+								<input type="text" name="nama" value="<?php echo $data['pbl_nama'];?>" /> 
 							</div>
 							<div>
 								<span>Alamat<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_alamat'];?>" name="alamat"> 
+								<input type="text" name="alamat" value="<?php echo $data['pbl_alamat'];?>" /> 
 							</div>
 							<div>
 								<span>No Telepon<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_telp'];?>" name="telepon"> 
+								<input type="text" name="telepon" value="<?php echo $data['pbl_telp'];?>" /> 
 							</div>
 							<div>
 								<span>Email<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_email'];?>" name="email"> 
+								<input type="text" name="email" value="<?php echo $data['pbl_email'];?>"/> 
 							</div>
 							<div>
 								<span>Status<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_status'];?>" name="status"> 
+								<input type="text" name="status" value="<?php echo $data['pbl_status'];?>" /> 
 							</div>
 							<div class="register-but">
-					   			<input type="submit" value="Save" name="simpan">
+					   			<input type="submit" name="simpan" value="Save"/>
 					   		</div>
 					  	 </form>
-					<?php
-					include ('../config.php');
-// menyimpan data kedalam variabel
-					if(isset($_POST['simpan'])){
-						$idpbl   		= $_POST['idpbl'];
-						$nama           = $_POST['nama'];
-						$alamat         = $_POST['alamat'];
-						$notelp  	    = $_POST['telepon'];
-						$email  		= $_POST['email'];
-						$status         = $_POST['status'];
-// query SQL untuk insert data
-						$query = "UPDATE pembeli SET nama='$nama', alamat='$alamat', telepon='$notelp',email='$email', ='$status' WHERE pbl_id=$idpbl";
-						mysqli_query($conn, $query) or die(mysqli_error($conn));
-// mengalihkan ke halaman index.php
-						//header("location: trigger2.php");
-						}
-						// else  {
-						// 	die("Gagal menyimpan perubahan...");
-    		// 			}
-					?>
+					  	 					   		<?php
+include '../config.php'
+
+if(isset($_POST['simpan'])){
+	$idpbl   		= $_POST['pbl_id'];
+	$nama           = $_POST['pbl_nama'];
+	$alamat         = $_POST['pbl_alamat'];
+	$telepon  	   	= $_POST['pbl_telp'];
+	$email  		= $_POST['pbl_email'];
+	$status         = $_POST['pbl_status'];
+
+	$query = "UPDATE pembeli SET pbl_nama='$pbl_nama', pbl_alamat='$pbl_alamat', pbl_telp='$pbl_telp',pbl_email='$pbl_email', pbl_status='$pbl_status' WHERE pbl_id=$pbl_id";
+	mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+?>
 				</div>
 					 <div class="clearfix"> </div>		 	
 				</div>

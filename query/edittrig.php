@@ -164,18 +164,18 @@ include ('../config.php');
 					  	 </form>
 					  	 <?php
 					  	 	include('../config.php');
-
+					  	 	if(isset($_POST['simpan'])){
 								$nama  = $_POST['nama'];
 								$alamat = $_POST['alamat'];
 								$telepon = $_POST['telepon'];
 								$email = $_POST['email'];
 								$status = $_POST['status'];
 
-								$sql = "UPDATE pembeli set pbl_nama='$nama', pbl_alamat='$alamat', pbl_telp='telepon', pbl_email='$email', pbl_status='$status' WHERE pbl_id=$idpbl";
+								$sql = " UPDATE pembeli set pbl_nama = '$nama', pbl_alamat = '$alamat', pbl_telp = 'telepon', pbl_email = '$email', pbl_status = '$status' WHERE pbl_id = $idpbl";
 
 								mysqli_query($conn, $sql) or die(mysqli_error($conn));
 								//header("location:trigger2.php");
-
+							}
 					  	 ?>
 				</div>
 					 <div class="clearfix"> </div>		 	

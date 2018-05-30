@@ -1,9 +1,15 @@
 <?php
 include ('../config.php');
-	$idpbl      = $_GET['idpbl'];
-	$sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
-	$res  		= mysqli_query($conn, $sql);
-	$row        = mysqli_fetch_array($res);
+	if (isset($_GET['idpbl'])) {
+		$idpbl      = $_GET['idpbl'];
+		$sql		= "SELECT * from pembeli where pbl_id = '$idpbl'";
+		$res  		= mysqli_query($conn, $sql);
+		$row        = mysqli_fetch_array($res);
+	}
+	else {
+		$row = NULL;
+	}
+	
 	//echo "ini" . $idpbl;
 ?>
 
@@ -138,11 +144,11 @@ include ('../config.php');
 						<form method="post" action="edittrig.php">
 					  	 	<div>
 								<span>ID Pembeli<label>*</label></span>
-								<input type="hidden" value="<?php echo $row['pbl_id'];?>" name="idpbl"> 
+								<input type="hidden" value="<?php if($row) {echo $row['pbl_id'];}?>" name="idpbl"> 
 							</div>
 							<div>
 								<span>Nama<label>*</label></span>
-								<input type="text" value="<?php echo $row['pbl_nama'];?>" name="nama"> 
+								<input type="text" value="<?php if($row) {echo $row['pbl_nama'];} else {echo "";}?>" name="nama"> 
 							</div>
 							<div>
 								<span>Alamat<label>*</label></span>
@@ -167,30 +173,24 @@ include ('../config.php');
 					  	 <?php
 					  	 	include('../config.php');
 					  	 	if(isset($_POST['simpan'])){
-<<<<<<< HEAD
 					  	 		$idpbl = $_POST['idpbl'];
-=======
->>>>>>> master
 								$nama  = $_POST['nama'];
 								$alamat = $_POST['alamat'];
 								$telepon = $_POST['telepon'];
 								$email = $_POST['email'];
 								$status = $_POST['status'];
 
-<<<<<<< HEAD
 								$sql = "UPDATE pembeli set pbl_nama='$nama', pbl_alamat='$alamat', pbl_telp='$telepon', pbl_email='$email', pbl_status='$status' WHERE pbl_id='$idpbl'";
+
+								mysqli_query($conn, $sql) or die(mysqli_error($conn));
+								
+								echo "<script>
+							             alert('Updated!'); 
+							    		</script>";
 								}
 
-								mysqli_query($conn, $sql) or die(mysqli_error($conn));
-								header("location:trigger2.php");
 
-=======
-								$sql = " UPDATE pembeli set pbl_nama = '$nama', pbl_alamat = '$alamat', pbl_telp = 'telepon', pbl_email = '$email', pbl_status = '$status' WHERE pbl_id = $idpbl";
-
-								mysqli_query($conn, $sql) or die(mysqli_error($conn));
 								//header("location:trigger2.php");
-							}
->>>>>>> master
 					  	 ?>
 				</div>
 					 <div class="clearfix"> </div>		 	
